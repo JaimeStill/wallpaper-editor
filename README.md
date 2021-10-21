@@ -1,1 +1,1 @@
-# WallpaperEditor
+# Wallpaper Editor
