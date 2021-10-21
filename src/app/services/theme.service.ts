@@ -5,7 +5,18 @@ import { OverlayContainer } from '@angular/cdk/overlay';
   providedIn: 'root'
 })
 export class ThemeService {
-  isLight = true;
+  private key: string = 'jps-wp-editor-theme'
+  isLight: boolean;
+
+  private cacheTheme = () => localStorage.setItem(this.key, this.isLight.toString());
+
+  private loadTheme = (): boolean => {
+    const cache = localStorage.getItem(this.key);
+
+    return cache
+      ? cache === 'true'
+      : this.isLight ?? true;
+  }
 
   setOverlayContainerTheme = () => {
     if (this.isLight) {
@@ -20,11 +31,13 @@ export class ThemeService {
   toggleTheme = () => {
     this.isLight = !this.isLight;
     this.setOverlayContainerTheme();
+    this.cacheTheme();
   }
 
   constructor(
     private overlay: OverlayContainer
   ) {
+    this.isLight = this.loadTheme();
     this.setOverlayContainerTheme();
   }
 }

@@ -1,0 +1,11 @@
+<section fxLayout="row"
+         [fxLayoutAlign]="alignment"
+         [class]="containerStyle">
+  <p [class]="headerStyle">{{heading}}</p>
+  <button mat-icon-button
+          [ngClass]="themer.isLight ? lightIconColor : darkIconColor"
+          (click)="themer.toggleTheme()">
+    <mat-icon *ngIf="themer.isLight">{{lightIcon}}</mat-icon>
+    <mat-icon *ngIf="!(themer.isLight)">{{darkIcon}}</mat-icon>
+  </button>
+</section>
