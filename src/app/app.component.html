@@ -1,0 +1,12 @@
+<section class="mat-typography mat-app-background app-frame"
+         [ngClass]="themer.isLight ? 'app-light' : 'app-dark'">
+  <section fxLayout="row" fxLayoutAlign="space-between center" class="p8">
+    <p class="m4 mat-title bold">Wallpaper Editor</p>
+    <button mat-icon-button
+            [ngClass]="themer.isLight ? 'color-amber' : 'color-text'"
+            (click)="themer.toggleTheme()">
+      <mat-icon *ngIf="themer.isLight">brightness_5</mat-icon>
+      <mat-icon *ngIf="!(themer.isLight)">brightness_3</mat-icon>
+    </button>
+  </section>
+</section>
