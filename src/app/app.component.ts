@@ -21,6 +21,8 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.output.push('Testing AspectRatio Class');
+
     this.output.push(`Locked Aspect Ratio - Initial: ${this.lockedAr.render()}`);
     this.lockedAr.setWidth(4320);
     this.output.push(`Locked Aspect Ratio - Adjusted Width: ${this.lockedAr.render()}`);
