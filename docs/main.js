@@ -50,7 +50,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function AppComponent_p_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "p", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -65,29 +65,23 @@ class AppComponent {
         this.themer = themer;
         this.monospace = 'Consolas, Liberation Mono, Monaco, Lucida Console, monospace';
         this.output = [];
-        this.lockedAr = new _models__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(3440, 1440, true);
-        this.unlockedAr = new _models__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(2560, 1440, false);
+        this.wallpaper = new _models__WEBPACK_IMPORTED_MODULE_0__.Wallpaper(2560, 1440, 1200, 1200);
     }
     ngOnInit() {
-        this.output.push('Testing AspectRatio Class');
-        this.output.push(`Locked Aspect Ratio - Initial: ${this.lockedAr.render()}`);
-        this.lockedAr.setWidth(4320);
-        this.output.push(`Locked Aspect Ratio - Adjusted Width: ${this.lockedAr.render()}`);
-        this.lockedAr.setHeight(1080);
-        this.output.push(`Locked Aspect Ratio - Adjust Height: ${this.lockedAr.render()}`);
-        this.lockedAr.reset();
-        this.output.push(`Locked Aspect Ratio - Reset: ${this.lockedAr.render()}`);
-        this.output.push(`Unlocked Aspect Ratio - Initial: ${this.unlockedAr.render()}`);
-        this.unlockedAr.setWidth(3840);
-        this.output.push(`Unlocked Aspect Ratio - Adjusted Width: ${this.unlockedAr.render()}`);
-        this.unlockedAr.setHeight(2160);
-        this.output.push(`Unlocked Aspect Ratio - Adjusted Height: ${this.unlockedAr.render()}`);
-        this.unlockedAr.reset();
-        this.output.push(`Unlocked Aspect Ratio - Reset: ${this.unlockedAr.render()}`);
+        this.output.push('Testing Wallpaper Class');
+        this.output.push(`Wallpaper - Initial: ${this.wallpaper.render()}`);
+        this.wallpaper.setContainerWidth(3440);
+        this.output.push(`Wallpaper - Container Width Updated - Default (Unlocked): ${this.wallpaper.render()}`);
+        this.wallpaper.setImageWidth(1000);
+        this.output.push(`Wallpaper - Image Width Updated: ${this.wallpaper.render()}`);
+        this.wallpaper.setContainerHeight(1080, true);
+        this.output.push(`Wallpaper - Container Height Updated - Locked: ${this.wallpaper.render()}`);
+        this.wallpaper.reset();
+        this.output.push(`Wallpaper - Reset: ${this.wallpaper.render()}`);
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_services__WEBPACK_IMPORTED_MODULE_1__.ThemeService)); };
-AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 8, vars: 2, consts: [["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "mat-typography", "mat-app-background", "app-frame", 3, "ngClass"], ["heading", "Wallpaper Editor", "containerStyle", "background-card p8"], ["fxFlex", "", "fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "background-card", "p8"], [3, "font-family", 4, "ngFor", "ngForOf"], ["fxLayout", "column", "fxLayoutAlign", "start stretch"], ["fxLayout", "row", "fxLayoutAlign", "center center", 1, "p8"], ["mat-stroked-button", "", 1, "color-green", "m4"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 8, vars: 2, consts: [["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "mat-typography", "mat-app-background", "app-frame", 3, "ngClass"], ["heading", "Wallpaper Editor", "containerStyle", "background-card p8"], ["fxFlex", "", "fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "background-card", "p8"], ["class", "m8", 3, "font-family", 4, "ngFor", "ngForOf"], ["fxLayout", "column", "fxLayoutAlign", "start stretch"], ["fxLayout", "row", "fxLayoutAlign", "center center", 1, "p8"], ["mat-stroked-button", "", 1, "color-green", "m4"], [1, "m8"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "section", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](1, "app-header", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "section", 2);
@@ -518,10 +512,51 @@ class AspectRatio {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AspectRatio": () => (/* reexport safe */ _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio)
+/* harmony export */   "AspectRatio": () => (/* reexport safe */ _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio),
+/* harmony export */   "Wallpaper": () => (/* reexport safe */ _wallpaper__WEBPACK_IMPORTED_MODULE_1__.Wallpaper)
+/* harmony export */ });
+/* harmony import */ var _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./aspect-ratio */ 6365);
+/* harmony import */ var _wallpaper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./wallpaper */ 8775);
+
+
+
+
+/***/ }),
+
+/***/ 8775:
+/*!*************************************!*\
+  !*** ./src/app/models/wallpaper.ts ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Wallpaper": () => (/* binding */ Wallpaper)
 /* harmony export */ });
 /* harmony import */ var _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./aspect-ratio */ 6365);
 
+class Wallpaper {
+    constructor(containerWidth, containerHeight, imageWidth, imageHeight) {
+        this.padding = 0;
+        this.backdropFilter = '';
+        this.filter = '';
+        this.alignment = 'center center';
+        this.setContainerHeight = (height, locked = false) => this.containerSize.setHeight(height, locked);
+        this.setContainerWidth = (width, locked = false) => this.containerSize.setWidth(width, locked);
+        this.setImageHeight = (height) => this.imageSize.setHeight(height);
+        this.setImageWidth = (width) => this.imageSize.setWidth(width);
+        this.render = () => `Container: ${this.containerSize.render()}, Image: ${this.imageSize.render()}`;
+        this.reset = () => {
+            this.containerSize.reset();
+            this.imageSize.reset();
+        };
+        this._containerSize = new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(containerWidth, containerHeight, false);
+        this._imageSize = new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(imageWidth, imageHeight, true);
+    }
+    get containerSize() { return this._containerSize; }
+    get imageSize() { return this._imageSize; }
+}
 
 
 /***/ }),
