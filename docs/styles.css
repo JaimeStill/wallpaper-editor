@@ -815,6 +815,10 @@ body {
   height: 100%;
 }
 
+input[type=file].styled {
+  display: none;
+}
+
 mat-toolbar.mat-toolbar mat-form-field.mat-form-field {
   font-size: 12px;
 }
@@ -925,6 +929,76 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
 .sticky-left {
   position: sticky;
   left: 0;
+}
+
+.border-none {
+  border-style: none !important;
+}
+
+.border-solid {
+  border-style: solid !important;
+}
+
+.border-dashed {
+  border-style: dashed !important;
+}
+
+.border-dotted {
+  border-style: dotted !important;
+}
+
+.border-double {
+  border-style: double !important;
+}
+
+.border-x-none {
+  border-top-style: none !important;
+  border-bottom-style: none !important;
+}
+
+.border-y-none {
+  border-left-style: none !important;
+  border-right-style: none !important;
+}
+
+.border-x-solid {
+  border-top-style: solid !important;
+  border-bottom-style: solid !important;
+}
+
+.border-y-solid {
+  border-left-style: solid !important;
+  border-right-style: solid !important;
+}
+
+.border-x-dashed {
+  border-top-style: dashed !important;
+  border-bottom-style: dashed !important;
+}
+
+.border-y-dashed {
+  border-left-style: dashed !important;
+  border-right-style: dashed !important;
+}
+
+.border-x-dotted {
+  border-top-style: dotted !important;
+  border-bottom-style: dotted !important;
+}
+
+.border-y-dotted {
+  border-left-style: dotted !important;
+  border-right-style: dotted !important;
+}
+
+.border-x-double {
+  border-top-style: double !important;
+  border-bottom-style: double !important;
+}
+
+.border-y-double {
+  border-left-style: double !important;
+  border-right-style: double !important;
 }
 
 .overflow {
@@ -1081,6 +1155,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
   margin-left: 0px !important;
 }
 
+.border-width-0 {
+  border-width: 0px !important;
+}
+
 .p1 {
   padding: 1px !important;
 }
@@ -1139,6 +1217,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
 
 .ml1 {
   margin-left: 1px !important;
+}
+
+.border-width-1 {
+  border-width: 1px !important;
 }
 
 .p2 {
@@ -1201,6 +1283,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
   margin-left: 2px !important;
 }
 
+.border-width-2 {
+  border-width: 2px !important;
+}
+
 .p3 {
   padding: 3px !important;
 }
@@ -1259,6 +1345,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
 
 .ml3 {
   margin-left: 3px !important;
+}
+
+.border-width-3 {
+  border-width: 3px !important;
 }
 
 .p4 {
@@ -1321,6 +1411,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
   margin-left: 4px !important;
 }
 
+.border-width-4 {
+  border-width: 4px !important;
+}
+
 .p5 {
   padding: 5px !important;
 }
@@ -1379,6 +1473,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
 
 .ml5 {
   margin-left: 5px !important;
+}
+
+.border-width-5 {
+  border-width: 5px !important;
 }
 
 .p6 {
@@ -1441,6 +1539,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
   margin-left: 6px !important;
 }
 
+.border-width-6 {
+  border-width: 6px !important;
+}
+
 .p7 {
   padding: 7px !important;
 }
@@ -1499,6 +1601,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
 
 .ml7 {
   margin-left: 7px !important;
+}
+
+.border-width-7 {
+  border-width: 7px !important;
 }
 
 .p8 {
@@ -1561,6 +1667,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
   margin-left: 8px !important;
 }
 
+.border-width-8 {
+  border-width: 8px !important;
+}
+
 .p9 {
   padding: 9px !important;
 }
@@ -1619,6 +1729,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
 
 .ml9 {
   margin-left: 9px !important;
+}
+
+.border-width-9 {
+  border-width: 9px !important;
 }
 
 .p10 {
@@ -1681,6 +1795,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
   margin-left: 10px !important;
 }
 
+.border-width-10 {
+  border-width: 10px !important;
+}
+
 .p11 {
   padding: 11px !important;
 }
@@ -1739,6 +1857,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
 
 .ml11 {
   margin-left: 11px !important;
+}
+
+.border-width-11 {
+  border-width: 11px !important;
 }
 
 .p12 {
@@ -1801,6 +1923,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
   margin-left: 12px !important;
 }
 
+.border-width-12 {
+  border-width: 12px !important;
+}
+
 .p13 {
   padding: 13px !important;
 }
@@ -1859,6 +1985,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
 
 .ml13 {
   margin-left: 13px !important;
+}
+
+.border-width-13 {
+  border-width: 13px !important;
 }
 
 .p14 {
@@ -1921,6 +2051,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
   margin-left: 14px !important;
 }
 
+.border-width-14 {
+  border-width: 14px !important;
+}
+
 .p15 {
   padding: 15px !important;
 }
@@ -1979,6 +2113,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
 
 .ml15 {
   margin-left: 15px !important;
+}
+
+.border-width-15 {
+  border-width: 15px !important;
 }
 
 .p16 {
@@ -2041,6 +2179,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
   margin-left: 16px !important;
 }
 
+.border-width-16 {
+  border-width: 16px !important;
+}
+
 .p17 {
   padding: 17px !important;
 }
@@ -2099,6 +2241,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
 
 .ml17 {
   margin-left: 17px !important;
+}
+
+.border-width-17 {
+  border-width: 17px !important;
 }
 
 .p18 {
@@ -2161,6 +2307,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
   margin-left: 18px !important;
 }
 
+.border-width-18 {
+  border-width: 18px !important;
+}
+
 .p19 {
   padding: 19px !important;
 }
@@ -2219,6 +2369,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
 
 .ml19 {
   margin-left: 19px !important;
+}
+
+.border-width-19 {
+  border-width: 19px !important;
 }
 
 .p20 {
@@ -2281,6 +2435,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
   margin-left: 20px !important;
 }
 
+.border-width-20 {
+  border-width: 20px !important;
+}
+
 .p21 {
   padding: 21px !important;
 }
@@ -2339,6 +2497,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
 
 .ml21 {
   margin-left: 21px !important;
+}
+
+.border-width-21 {
+  border-width: 21px !important;
 }
 
 .p22 {
@@ -2401,6 +2563,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
   margin-left: 22px !important;
 }
 
+.border-width-22 {
+  border-width: 22px !important;
+}
+
 .p23 {
   padding: 23px !important;
 }
@@ -2461,6 +2627,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
   margin-left: 23px !important;
 }
 
+.border-width-23 {
+  border-width: 23px !important;
+}
+
 .p24 {
   padding: 24px !important;
 }
@@ -2519,6 +2689,10 @@ div[class*=app-dark] .snacker div.mat-simple-snackbar-action {
 
 .ml24 {
   margin-left: 24px !important;
+}
+
+.border-width-24 {
+  border-width: 24px !important;
 }
 
 .background-card {
