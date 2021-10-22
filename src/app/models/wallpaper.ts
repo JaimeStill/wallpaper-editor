@@ -46,7 +46,7 @@ export class Wallpaper {
   setImageWidth = (width: number) => this.imageSize.setWidth(width);
 
   setPadding = (padding: number) => {
-    this.padding = padding;
+    this._padding = padding;
     
     this.imageSize.width > this.imageSize.height
       ? this.setImageWidth(this.imageSize.width - padding)
