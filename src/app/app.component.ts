@@ -3,6 +3,11 @@ import {
   OnInit
 } from '@angular/core';
 
+import {
+  DomSanitizer,
+  SafeUrl
+} from '@angular/platform-browser';
+
 import { Wallpaper } from './models';
 import { ThemeService } from './services';
 
@@ -15,7 +20,10 @@ export class AppComponent implements OnInit {
   output: string[] = [];
   wallpaper!: Wallpaper;
 
+  imageSrc: SafeUrl;
+
   constructor(
+    private sanitizer: DomSanitizer,
     public themer: ThemeService
   ) { }
 
@@ -28,6 +36,7 @@ export class AppComponent implements OnInit {
 
       img.onload = () => {
         this.wallpaper = new Wallpaper(img.src, file, img.width, img.height, file.name?.split('.')[0]);
+        this.imageSrc = this.sanitizer.bypassSecurityTrustUrl(img.src);
       }
     }
   }
