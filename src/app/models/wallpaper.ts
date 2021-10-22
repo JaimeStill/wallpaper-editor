@@ -59,6 +59,6 @@ export class Wallpaper {
 
   reset = () => {
     this.containerSize.reset();
-    this.imageSize.reset();
+    this.imageSize.reset(this.padding);
   }
 }

@@ -37,9 +37,14 @@ export class AspectRatio {
       this._height = this.getAspectHeight(width);
   }
 
-  reset = () => {
-    this._width = this.originalWidth;
-    this._height = this.originalHeight;
+  reset = (padding: number | undefined = undefined) => {
+    if (padding) {
+      this._width = this.originalWidth - padding;
+      this._height = this.originalHeight - padding;
+    } else {
+      this._width = this.originalWidth;
+      this._height = this.originalHeight;
+    }
   }
 
   render = () => `${this.width} x ${this.height}`;
