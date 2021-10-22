@@ -4,19 +4,32 @@ export class Wallpaper {
   private _containerSize: AspectRatio;
   private _imageSize: AspectRatio;
 
-  padding: number = 0;
+  src: string;
+  file: File;
+  name: string;
   backdropFilter: string = '';
   filter: string = '';
   alignment: string = 'center center';
+  padding: number = 0;
 
   constructor(
-    containerWidth: number,
-    containerHeight: number,
+    src: string,
+    file: File,
     imageWidth: number,
-    imageHeight: number
+    imageHeight: number,
+    name: string = '',
+    containerWidth: number | undefined = undefined,
+    containerHeight: number | undefined = undefined,
   ) {
-    this._containerSize = new AspectRatio(containerWidth, containerHeight, false);
+    containerWidth = containerWidth ? containerWidth : imageWidth + 20;
+    containerHeight = containerHeight ? containerHeight : imageHeight + 20;
+
+    this.src = src;
+    this.file = file;
+    this.name = name;
+
     this._imageSize = new AspectRatio(imageWidth, imageHeight, true);
+    this._containerSize = new AspectRatio(containerWidth, containerHeight, false);
   }
 
   public get containerSize() { return this._containerSize; }
