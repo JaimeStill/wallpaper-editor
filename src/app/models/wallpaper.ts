@@ -32,7 +32,7 @@ export class Wallpaper {
     this.file = file;
     this.name = name;
 
-    this._imageSize = new AspectRatio(imageWidth - this.padding, imageHeight - this.padding, true);
+    this._imageSize = new AspectRatio(imageWidth, imageHeight, true);
     this._containerSize = new AspectRatio(containerWidth, containerHeight, false);
   }
 
@@ -42,15 +42,17 @@ export class Wallpaper {
   setContainerWidth = (width: number, locked: boolean = false) =>
     this.containerSize.setWidth(width, locked);
 
-  setImageHeight = (height: number) => this.imageSize.setHeight(height);
-  setImageWidth = (width: number) => this.imageSize.setWidth(width);
+  setImageHeight = (height: number) => this.imageSize.setHeight(height - this.padding);
+  setImageWidth = (width: number) => this.imageSize.setWidth(width - this.padding);
 
   setPadding = (padding: number) => {
     this._padding = padding;
     
-    this.imageSize.width > this.imageSize.height
-      ? this.setImageWidth(this.imageSize.width - padding)
-      : this.setImageHeight(this.imageSize.height - padding);
+    this.imageSize.width === this.imageSize.height
+      ? this.setImageWidth(this.imageSize.width) && this.setImageHeight(this.imageSize.height)
+        : this.imageSize.width < this.imageSize.height
+          ? this.setImageWidth(this.imageSize.width)
+          : this.setImageHeight(this.imageSize.height);
   }
 
   render = () => `Container: ${this.containerSize.render()}, Image: ${this.imageSize.render()}`;
