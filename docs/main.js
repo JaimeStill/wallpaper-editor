@@ -797,14 +797,14 @@ class AspectRatio {
     constructor(width, height, locked) {
         this.getAspectHeight = (newWidth) => newWidth * (this.originalHeight / this.originalWidth);
         this.getAspectWidth = (newHeight) => newHeight * (this.originalWidth / this.originalHeight);
-        this.setHeight = (height, lock = true) => {
+        this.setHeight = (height, lock = this.locked) => {
             this._height = height;
-            if (lock || this.locked)
+            if (lock)
                 this._width = this.getAspectWidth(height);
         };
         this.setWidth = (width, lock = this.locked) => {
             this._width = width;
-            if (lock || this.locked)
+            if (lock)
                 this._height = this.getAspectHeight(width);
         };
         this.reset = () => {
