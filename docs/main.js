@@ -807,9 +807,15 @@ class AspectRatio {
             if (lock)
                 this._height = this.getAspectHeight(width);
         };
-        this.reset = () => {
-            this._width = this.originalWidth;
-            this._height = this.originalHeight;
+        this.reset = (padding = undefined) => {
+            if (padding) {
+                this._width = this.originalWidth - padding;
+                this._height = this.originalHeight - padding;
+            }
+            else {
+                this._width = this.originalWidth;
+                this._height = this.originalHeight;
+            }
         };
         this.render = () => `${this.width} x ${this.height}`;
         this._originalWidth = this._width = width;
@@ -865,27 +871,33 @@ class Wallpaper {
         this.backdropFilter = '';
         this.filter = '';
         this.alignment = 'center center';
+        this.setHeightAndWidth = () => {
+            this.setImageHeight(this.imageSize.height);
+            this.setImageWidth(this.imageSize.width);
+        };
         this.setContainerHeight = (height, locked = false) => this.containerSize.setHeight(height, locked);
         this.setContainerWidth = (width, locked = false) => this.containerSize.setWidth(width, locked);
-        this.setImageHeight = (height) => this.imageSize.setHeight(height);
-        this.setImageWidth = (width) => this.imageSize.setWidth(width);
+        this.setImageHeight = (height) => this.imageSize.setHeight(height - this.padding);
+        this.setImageWidth = (width) => this.imageSize.setWidth(width - this.padding);
         this.setPadding = (padding) => {
             this._padding = padding;
-            this.imageSize.width > this.imageSize.height
-                ? this.setImageWidth(this.imageSize.width - padding)
-                : this.setImageHeight(this.imageSize.height - padding);
+            this.imageSize.width === this.imageSize.height
+                ? this.setHeightAndWidth()
+                : this.imageSize.width < this.imageSize.height
+                    ? this.setImageWidth(this.imageSize.width)
+                    : this.setImageHeight(this.imageSize.height);
         };
         this.render = () => `Container: ${this.containerSize.render()}, Image: ${this.imageSize.render()}`;
         this.reset = () => {
             this.containerSize.reset();
-            this.imageSize.reset();
+            this.imageSize.reset(this.padding);
         };
         containerWidth = containerWidth && containerWidth > imageWidth ? containerWidth : imageWidth;
         containerHeight = containerHeight && containerHeight > imageHeight ? containerHeight : imageHeight;
         this.src = src;
         this.file = file;
         this.name = name;
-        this._imageSize = new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(imageWidth - this.padding, imageHeight - this.padding, true);
+        this._imageSize = new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(imageWidth, imageHeight, true);
         this._containerSize = new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(containerWidth, containerHeight, false);
     }
     get containerSize() { return this._containerSize; }
