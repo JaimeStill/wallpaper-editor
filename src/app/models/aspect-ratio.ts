@@ -24,7 +24,7 @@ export class AspectRatio {
   getAspectHeight = (newWidth: number) => newWidth * (this.originalHeight / this.originalWidth);
   getAspectWidth = (newHeight: number) => newHeight * (this.originalWidth / this.originalHeight);
 
-  setHeight = (height: number, lock: boolean = true) => {
+  setHeight = (height: number, lock: boolean = this.locked) => {
     this._height = height;
     if (lock || this.locked)
       this._width = this.getAspectWidth(height);
