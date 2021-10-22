@@ -1,0 +1,20 @@
+<section fxLayout="row"
+         fxLayoutAlign="start center"
+         [fxLayoutGap]="gap"
+         class="mt4 mx4">
+  <mat-form-field fxFlex>
+    <mat-label>Link</mat-label>
+    <input matInput
+           #linkInput />
+    <mat-hint *ngIf="!(valid) && dirty"
+              class="color-warn">Link must end with an extension: {{extensions.join(', ')}}</mat-hint>
+    <mat-hint *ngIf="error"
+              class="color-warn">{{error}}</mat-hint>
+  </mat-form-field>
+  <button mat-flat-button
+          [class]="buttonStyle"
+          [disabled]="!(valid)"
+          (click)="load()">
+    {{label}}
+  </button>
+</section>

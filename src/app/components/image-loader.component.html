@@ -7,8 +7,9 @@
          fxLayoutAlign="start stretch">
   <section [style.width.px]="dropWidth"
            [style.height.px]="dropHeight"
-           class="drop-container"
+           class="drop-container cursor-pointer"
            [ngClass]="dropStyle"
+           (click)="fileInput.click()"
            (drop)="drop($event)"
            (dragover)="dragOver($event)"
            (dragleave)="dragLeave()">
@@ -20,9 +21,5 @@
                 [ngClass]="dropIconClass">{{dropIcon}}</mat-icon>
     </section>
   </section>
-  <button mat-stroked-button
-          [class]="buttonStyle"
-          (click)="fileInput.click()">
-    {{buttonLabel}}
-  </button>
+  <link-loader (loaded)="emitFile($event)"></link-loader>
 </section>

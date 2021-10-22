@@ -19,14 +19,16 @@ export class AppComponent implements OnInit {
     public themer: ThemeService
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   load = (file: File) => {
-    const img = document.createElement('img');
-    img.src = URL.createObjectURL(file);
+    if (file) {
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(file);
 
-    img.onload = () => {
-      this.wallpaper = new Wallpaper(img.src, file, img.width, img.height, file.name?.split('.')[0]);
+      img.onload = () => {
+        this.wallpaper = new Wallpaper(img.src, file, img.width, img.height, file.name?.split('.')[0]);
+      }
     }
   }
 }
