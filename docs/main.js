@@ -440,9 +440,7 @@ class LinkLoaderComponent {
     this.load = /*#__PURE__*/(0,D_a_wallpaper_editor_wallpaper_editor_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)(function* () {
       if (_this.valid && _this.dirty) {
         try {
-          const response = yield fetch(_this.url, {
-            mode: 'cors'
-          });
+          const response = yield fetch(_this.url);
 
           if (response.ok) {
             _this.error = undefined;
@@ -461,6 +459,7 @@ class LinkLoaderComponent {
 
             _this.dirty = false;
           } else {
+            console.error(response);
             _this.error = response.statusText;
           }
         } catch (err) {
