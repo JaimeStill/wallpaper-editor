@@ -72,7 +72,7 @@ export class LinkLoaderComponent implements AfterViewInit, OnDestroy {
   load = async () => {
     if (this.valid && this.dirty) {
       try {
-        const response = await fetch(this.url, { mode: 'cors' });
+        const response = await fetch(this.url);
 
         if (response.ok) {
           this.error = undefined;
@@ -92,6 +92,7 @@ export class LinkLoaderComponent implements AfterViewInit, OnDestroy {
           this.loaded.emit(file);
           this.dirty = false;
         } else {
+          console.error(response);
           this.error = response.statusText;
         }
       } catch (err) {
