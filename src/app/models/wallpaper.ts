@@ -3,6 +3,7 @@ import { AspectRatio } from './aspect-ratio';
 export class Wallpaper {
   private _containerSize: AspectRatio;
   private _imageSize: AspectRatio;
+  private _padding: number = 0;
 
   src: string;
   file: File;
@@ -10,7 +11,10 @@ export class Wallpaper {
   backdropFilter: string = '';
   filter: string = '';
   alignment: string = 'center center';
-  padding: number = 0;
+
+  public get containerSize() { return this._containerSize; }
+  public get imageSize() { return this._imageSize; }
+  public get padding() { return this._padding; }
 
   constructor(
     src: string,
@@ -21,19 +25,16 @@ export class Wallpaper {
     containerWidth: number | undefined = undefined,
     containerHeight: number | undefined = undefined,
   ) {
-    containerWidth = containerWidth ? containerWidth : imageWidth + 20;
-    containerHeight = containerHeight ? containerHeight : imageHeight + 20;
+    containerWidth = containerWidth > imageWidth ? containerWidth : imageWidth;
+    containerHeight = containerHeight > imageHeight ? containerHeight : imageHeight;
 
     this.src = src;
     this.file = file;
     this.name = name;
 
-    this._imageSize = new AspectRatio(imageWidth, imageHeight, true);
+    this._imageSize = new AspectRatio(imageWidth - this.padding, imageHeight - this.padding, true);
     this._containerSize = new AspectRatio(containerWidth, containerHeight, false);
   }
-
-  public get containerSize() { return this._containerSize; }
-  public get imageSize() { return this._imageSize; }
 
   setContainerHeight = (height: number, locked: boolean = false) =>
     this.containerSize.setHeight(height, locked);
@@ -43,6 +44,14 @@ export class Wallpaper {
 
   setImageHeight = (height: number) => this.imageSize.setHeight(height);
   setImageWidth = (width: number) => this.imageSize.setWidth(width);
+
+  setPadding = (padding: number) => {
+    this.padding = padding;
+    
+    this.imageSize.width > this.imageSize.height
+      ? this.setImageWidth(this.imageSize.width - padding)
+      : this.setImageHeight(this.imageSize.height - padding);
+  }
 
   render = () => `Container: ${this.containerSize.render()}, Image: ${this.imageSize.render()}`;
 
