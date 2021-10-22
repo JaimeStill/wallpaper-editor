@@ -15,6 +15,10 @@
   background-color: black;
 }
 
+.drop-container:hover .drop-overlay:hover {
+  opacity: .5!important;
+}
+
 .drop-container mat-icon.material-icons,
 .drop-container mat-icon.material-icons-outlined {
   color: white;
