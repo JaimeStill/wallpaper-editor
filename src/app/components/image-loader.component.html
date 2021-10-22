@@ -1,0 +1,28 @@
+<input #fileInput
+       type="file"
+       class="styled"
+       accept="image/*"
+       (change)="fileChange($event)" />
+<section fxLayout="column"
+         fxLayoutAlign="start stretch">
+  <section [style.width.px]="dropWidth"
+           [style.height.px]="dropHeight"
+           class="drop-container"
+           [ngClass]="dropStyle"
+           (drop)="drop($event)"
+           (dragover)="dragOver($event)"
+           (dragleave)="dragLeave()">
+    <section fxLayout="column"
+             fxLayoutAlign="center center"
+             class="drop-overlay"
+             [style.opacity]="hovered ? .5 : 0">
+      <mat-icon [style.transform]="'scale(' + dropIconScale + ')'"
+                [ngClass]="dropIconClass">{{dropIcon}}</mat-icon>
+    </section>
+  </section>
+  <button mat-stroked-button
+          [class]="buttonStyle"
+          (click)="fileInput.click()">
+    {{buttonLabel}}
+  </button>
+</section>

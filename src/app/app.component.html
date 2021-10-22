@@ -3,22 +3,29 @@
          fxLayoutAlign="start stretch"
          [ngClass]="themer.isLight ? 'app-light' : 'app-dark'">
   <app-header heading="Wallpaper Editor"
-              containerStyle="background-card p8"></app-header>
+              containerStyle="p8"></app-header>
   <section fxFlex
            fxLayout="column"
-           fxLayoutAlign="start stretch"
-           class="background-card p8">
-    <p *ngFor="let log of output"
-       class="m8"
-       [style.font-family]="monospace">{{log}}</p>
+           fxLayoutAlign="center center"
+           class="p8">
+    <section fxLayout="row | wrap"
+             fxLayoutAlign="center center"
+             fxLayoutGap="16px">
+      <image-loader (select)="load($event)"></image-loader>
+      <code class="color-orange background-card px8 py4 m4 card-outline-accent rounded glow-accent"
+            *ngIf="wallpaper">
+      <pre class="rounded">{{wallpaper | json}}</pre>
+    </code>
+    </section>
   </section>
-  <section fxLayout="column"
-           fxLayoutAlign="start stretch">
+  <section *ngIf="wallpaper"
+           fxLayout="column"
+           fxLayoutAlign="start stretch"
+           class="background-card">
     <section class="p8"
              fxLayout="row"
              fxLayoutAlign="center center">
-      <button mat-stroked-button
-              class="color-green m4">Load Image</button>
+      <p class="m4 mat-title">Controls</p>
     </section>
   </section>
 </section>
