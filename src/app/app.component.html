@@ -8,6 +8,7 @@
            fxLayout="column"
            fxLayoutAlign="center center"
            class="p8">
+    <img *ngIf="wallpaper" height="300" [src]="wallpaper.src" [alt]="wallpaper.name">
     <section fxLayout="row | wrap"
              fxLayoutAlign="center center"
              fxLayoutGap="16px">
