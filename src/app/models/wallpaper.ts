@@ -36,6 +36,11 @@ export class Wallpaper {
     this._containerSize = new AspectRatio(containerWidth, containerHeight, false);
   }
 
+  private setHeightAndWidth = () => {
+    this.setImageHeight(this.imageSize.height);
+    this.setImageWidth(this.imageSize.width);
+  }
+
   setContainerHeight = (height: number, locked: boolean = false) =>
     this.containerSize.setHeight(height, locked);
 
@@ -49,7 +54,7 @@ export class Wallpaper {
     this._padding = padding;
     
     this.imageSize.width === this.imageSize.height
-      ? this.setImageWidth(this.imageSize.width) && this.setImageHeight(this.imageSize.height)
+      ? this.setHeightAndWidth()
         : this.imageSize.width < this.imageSize.height
           ? this.setImageWidth(this.imageSize.width)
           : this.setImageHeight(this.imageSize.height);
