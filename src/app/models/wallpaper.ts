@@ -25,8 +25,8 @@ export class Wallpaper {
     containerWidth: number | undefined = undefined,
     containerHeight: number | undefined = undefined,
   ) {
-    containerWidth = containerWidth > imageWidth ? containerWidth : imageWidth;
-    containerHeight = containerHeight > imageHeight ? containerHeight : imageHeight;
+    containerWidth = containerWidth && containerWidth > imageWidth ? containerWidth : imageWidth;
+    containerHeight = containerHeight && containerHeight > imageHeight ? containerHeight : imageHeight;
 
     this.src = src;
     this.file = file;
