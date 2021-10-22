@@ -1,5 +1,7 @@
 # Wallpaper Editor
 
+[![Deploy Pages](https://github.com/JaimeStill/wallpaper-editor/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/JaimeStill/wallpaper-editor/actions/workflows/deploy-pages.yml)  
+
 [Live App](https://jaimestill.github.io/wallpaper-editor/)
 
 ## Test Fragments
