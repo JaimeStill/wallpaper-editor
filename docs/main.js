@@ -89,7 +89,7 @@ class AppComponent {
     ngOnInit() { }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_services__WEBPACK_IMPORTED_MODULE_1__.ThemeService)); };
-AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 7, vars: 3, consts: [["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "mat-typography", "mat-app-background", "app-frame", 3, "ngClass"], ["heading", "Wallpaper Editor", "containerStyle", "p8"], ["fxFlex", "", "fxLayout", "column", "fxLayoutAlign", "center center", 1, "p8"], ["fxLayout", "row | wrap", "fxLayoutAlign", "center center", "fxLayoutGap", "16px"], [3, "loaded"], ["class", "color-orange background-card px8 py4 m4 card-outline-accent rounded glow-accent", 4, "ngIf"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", "class", "background-card", 4, "ngIf"], [1, "color-orange", "background-card", "px8", "py4", "m4", "card-outline-accent", "rounded", "glow-accent"], [1, "rounded"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "background-card"], ["fxLayout", "row", "fxLayoutAlign", "center center", 1, "p8"], [1, "m4", "mat-title"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 7, vars: 3, consts: [["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "mat-typography", "mat-app-background", "app-frame", 3, "ngClass"], ["heading", "Wallpaper Editor", "containerStyle", "p8"], ["fxFlex", "", "fxLayout", "column", "fxLayoutAlign", "center center", 1, "p8"], ["fxLayout", "row | wrap", "fxLayoutAlign", "center center", "fxLayoutGap", "16px"], [3, "loaded"], ["class", "color-green background-card px8 py4 m4 card-outline-accent rounded glow-accent", 4, "ngIf"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", "class", "background-card", 4, "ngIf"], [1, "color-green", "background-card", "px8", "py4", "m4", "card-outline-accent", "rounded", "glow-accent"], [1, "rounded"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "background-card"], ["fxLayout", "row", "fxLayoutAlign", "center center", 1, "p8"], [1, "m4", "mat-title"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "section", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "app-header", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "section", 2);
@@ -861,29 +861,36 @@ __webpack_require__.r(__webpack_exports__);
 
 class Wallpaper {
     constructor(src, file, imageWidth, imageHeight, name = '', containerWidth = undefined, containerHeight = undefined) {
+        this._padding = 0;
         this.backdropFilter = '';
         this.filter = '';
         this.alignment = 'center center';
-        this.padding = 0;
         this.setContainerHeight = (height, locked = false) => this.containerSize.setHeight(height, locked);
         this.setContainerWidth = (width, locked = false) => this.containerSize.setWidth(width, locked);
         this.setImageHeight = (height) => this.imageSize.setHeight(height);
         this.setImageWidth = (width) => this.imageSize.setWidth(width);
+        this.setPadding = (padding) => {
+            this._padding = padding;
+            this.imageSize.width > this.imageSize.height
+                ? this.setImageWidth(this.imageSize.width - padding)
+                : this.setImageHeight(this.imageSize.height - padding);
+        };
         this.render = () => `Container: ${this.containerSize.render()}, Image: ${this.imageSize.render()}`;
         this.reset = () => {
             this.containerSize.reset();
             this.imageSize.reset();
         };
-        containerWidth = containerWidth ? containerWidth : imageWidth + 20;
-        containerHeight = containerHeight ? containerHeight : imageHeight + 20;
+        containerWidth = containerWidth && containerWidth > imageWidth ? containerWidth : imageWidth;
+        containerHeight = containerHeight && containerHeight > imageHeight ? containerHeight : imageHeight;
         this.src = src;
         this.file = file;
         this.name = name;
-        this._imageSize = new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(imageWidth, imageHeight, true);
+        this._imageSize = new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(imageWidth - this.padding, imageHeight - this.padding, true);
         this._containerSize = new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(containerWidth, containerHeight, false);
     }
     get containerSize() { return this._containerSize; }
     get imageSize() { return this._imageSize; }
+    get padding() { return this._padding; }
 }
 
 
