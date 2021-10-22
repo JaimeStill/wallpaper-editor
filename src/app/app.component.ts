@@ -19,8 +19,7 @@ export class AppComponent implements OnInit {
   monospace = 'Consolas, Liberation Mono, Monaco, Lucida Console, monospace';
   output: string[] = [];
   wallpaper!: Wallpaper;
-
-  imageSrc: SafeUrl;
+  imageSrc!: SafeUrl;
 
   constructor(
     private sanitizer: DomSanitizer,
