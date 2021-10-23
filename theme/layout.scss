@@ -11,7 +11,12 @@ body {
 }
 
 .control-panel {
-  max-height: 66%;
+  max-height: 50%;
+}
+
+
+mat-form-field.mat-form-field div.mat-form-field-infix {
+  width: auto;
 }
 
 .monospace {
