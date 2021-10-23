@@ -8,14 +8,16 @@
              fxFlex
              class="p8 m4 background-card rounded">
       <p class="mat-subheading-1">Container Size</p>
-      <aspect-ratio-editor [data]="wallpaper.containerSize"></aspect-ratio-editor>
+      <aspect-ratio-editor [data]="wallpaper.containerSize"
+                           (refresh)="refresh.emit()"></aspect-ratio-editor>
     </section>
     <section fxLayout="column"
              fxLayoutAlign="start stretch"
              fxFlex
              class="p8 m4 background-card rounded">
       <p class="mat-subheading-1">Image Size</p>
-      <aspect-ratio-editor [data]="wallpaper.imageSize"></aspect-ratio-editor>
+      <aspect-ratio-editor [data]="wallpaper.imageSize"
+                           (refresh)="refresh.emit()"></aspect-ratio-editor>
     </section>
   </section>
   <section fxLayout="column"

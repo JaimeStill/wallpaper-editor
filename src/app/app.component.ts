@@ -55,10 +55,14 @@ export class AppComponent implements AfterViewInit {
 
       img.onload = () => {
         this.imageSrc = this.sanitizer.bypassSecurityTrustUrl(img.src);
-        this.wallpaper = new Wallpaper(img.src, this.imageSrc, file, img.width, img.height, file.name?.split('.')[0]);
+        this.wallpaper = new Wallpaper(img.src, this.imageSrc, file, img.width, img.height, file.name?.split('.')[0], 3440, 1440);
         this.updatePreview(this.previewElement.nativeElement);
         this.loading = false;
       }
     }
+  }
+
+  refresh = () => {
+    this.updatePreview(this.previewElement.nativeElement);
   }
 }

@@ -1,6 +1,8 @@
 import {
   Component,
+  EventEmitter,
   Input,
+  Output
 } from '@angular/core';
 
 import { Wallpaper } from '../models';
@@ -71,4 +73,6 @@ border-style:
 
   @Input() wallpaper!: Wallpaper;
   @Input() editorStyle: string = 'p8';
+
+  @Output() refresh = new EventEmitter();
 }

@@ -21,15 +21,20 @@ export class AspectRatio {
   public get width() { return this._width; }
   public get height() { return this._height; }
 
-  getAspectHeight = (newWidth: number) => Math.floor(newWidth * (this.height / this.width));
-  getAspectWidth = (newHeight: number) => Math.floor(newHeight * (this.height / this.width));
+  private ensureGreaterThanZero = (value: number) => value > 0 ? value : 1;
+
+  getAspectHeight = (newWidth: number) => this.ensureGreaterThanZero(Math.floor(newWidth * (this.height / this.width)));
+  getAspectWidth = (newHeight: number) => this.ensureGreaterThanZero(Math.floor(newHeight * (this.width / this.height)));
+
+  scaleHeight = (factor: number) => this.ensureGreaterThanZero(Math.floor(this.height * factor));
+  scaleWidth = (factor: number) => this.ensureGreaterThanZero(Math.floor(this.width * factor));
 
   setHeight = (height: number, lock: boolean = this.locked) => {
     const width = this.getAspectWidth(height);
     this._height = height;
 
     if (lock)
-      this._width = width > 0 ? width : 0;
+      this._width = width;
   }
 
   setWidth = (width: number, lock: boolean = this.locked) => {
@@ -37,7 +42,7 @@ export class AspectRatio {
     this._width = width;
 
     if (lock)
-      this._height = height > 0 ? height : 0;
+      this._height = height;
   }
 
   reset = () => {
