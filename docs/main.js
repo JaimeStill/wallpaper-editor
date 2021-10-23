@@ -66,44 +66,42 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const _c0 = ["previewElement"];
-function AppComponent_ng_container_4_p_5_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "p", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r4.preview.render());
-} }
 function AppComponent_ng_container_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "img", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "section", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "p", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "section", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "img", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](5, AppComponent_ng_container_4_p_5_Template, 2, 1, "p", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "section", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "p", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "p", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
 } if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵstyleProp"]("width", ctx_r1.preview.containerSize.width, "px")("height", ctx_r1.preview.containerSize.height, "px");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("fxLayoutAlign", ctx_r1.wallpaper.alignment);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("height", ctx_r1.preview.imageSize.height)("width", ctx_r1.preview.imageSize.width)("src", ctx_r1.imageSrc, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵsanitizeUrl"])("alt", ctx_r1.wallpaper.name);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r1.wallpaper.render());
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r1.preview);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r1.preview.render());
 } }
 function AppComponent_image_loader_5_Template(rf, ctx) { if (rf & 1) {
-    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "image-loader", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("loaded", function AppComponent_image_loader_5_Template_image_loader_loaded_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r6); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r5.load($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("loaded", function AppComponent_image_loader_5_Template_image_loader_loaded_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r4.load($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("dropWidth", 400);
 } }
 function AppComponent_section_6_Template(rf, ctx) { if (rf & 1) {
-    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "section", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "section", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "section", 14);
@@ -112,7 +110,7 @@ function AppComponent_section_6_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5, "Name");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "input", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function AppComponent_section_6_Template_input_ngModelChange_6_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r8); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r7.wallpaper.name = $event; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function AppComponent_section_6_Template_input_ngModelChange_6_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r7); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r6.wallpaper.name = $event; });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "button", 17);
@@ -122,10 +120,12 @@ function AppComponent_section_6_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "image-loader", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("loaded", function AppComponent_section_6_Template_image_loader_loaded_10_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r8); const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r9.load($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("loaded", function AppComponent_section_6_Template_image_loader_loaded_10_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r7); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r8.load($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](11, "wallpaper-editor", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "wallpaper-editor", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("refresh", function AppComponent_section_6_Template_wallpaper_editor_refresh_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r7); const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r9.refresh(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
@@ -155,11 +155,14 @@ class AppComponent {
                 img.onload = () => {
                     var _a;
                     this.imageSrc = this.sanitizer.bypassSecurityTrustUrl(img.src);
-                    this.wallpaper = new _models__WEBPACK_IMPORTED_MODULE_0__.Wallpaper(img.src, this.imageSrc, file, img.width, img.height, (_a = file.name) === null || _a === void 0 ? void 0 : _a.split('.')[0]);
+                    this.wallpaper = new _models__WEBPACK_IMPORTED_MODULE_0__.Wallpaper(img.src, this.imageSrc, file, img.width, img.height, (_a = file.name) === null || _a === void 0 ? void 0 : _a.split('.')[0], 3440, 1440);
                     this.updatePreview(this.previewElement.nativeElement);
                     this.loading = false;
                 };
             }
+        };
+        this.refresh = () => {
+            this.updatePreview(this.previewElement.nativeElement);
         };
     }
     ngAfterViewInit() {
@@ -174,24 +177,21 @@ AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["�
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵloadQuery"]()) && (ctx.previewElement = _t.first);
-    } }, decls: 7, vars: 6, consts: [["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "mat-typography", "mat-app-background", "app-frame", 3, "ngClass"], ["heading", "Wallpaper Editor", "containerStyle", "p8 background-card", 3, "loading"], ["fxFlex", "", "fxLayout", "column", 1, "p8", "scroll-container", "background-card", 3, "fxLayoutAlign", "resize"], ["previewElement", ""], [4, "ngIf"], [3, "dropWidth", "loaded", 4, "ngIf"], ["fxLayout.lt-md", "column", "fxLayout.gt-sm", "row | wrap", "fxLayoutAlign", "start stretch", "class", "p8 background-default el-8 scroll-container control-panel", 4, "ngIf"], [3, "height", "width", "src", "alt"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "monospace", "p8"], [1, "m4"], ["class", "m4", 4, "ngIf"], [3, "dropWidth", "loaded"], ["fxLayout.lt-md", "column", "fxLayout.gt-sm", "row | wrap", "fxLayoutAlign", "start stretch", 1, "p8", "background-default", "el-8", "scroll-container", "control-panel"], ["fxLayout", "column", "fxLayoutAlign", "start stretch"], ["fxLayout", "row", "fxLayoutAlign", "start center", "fxLayoutGap", "4px", 1, "m4"], ["fxFlex", ""], ["matInput", "", 3, "ngModel", "ngModelChange"], ["mat-icon-button", "", "color", "primary", "matTooltip", "Export Wallpaper"], [1, "material-icons-outlined"], [3, "mini", "loaded"], ["fxFlex", "", 3, "wallpaper"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 7, vars: 5, consts: [["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "mat-typography", "mat-app-background", "app-frame", 3, "ngClass"], ["heading", "Wallpaper Editor", "containerStyle", "p8 background-card", 3, "loading"], ["fxFlex", "", "fxLayout", "column", "fxLayoutAlign", "center center", 1, "p8", "scroll-container", "background-card", 3, "resize"], ["previewElement", ""], [4, "ngIf"], [3, "dropWidth", "loaded", 4, "ngIf"], ["fxLayout.lt-md", "column", "fxLayout.gt-sm", "row | wrap", "fxLayoutAlign", "start stretch", "class", "p8 background-default el-8 scroll-container control-panel", 4, "ngIf"], ["fxLayout", "column", 1, "card-outline-accent", 3, "fxLayoutAlign"], [3, "height", "width", "src", "alt"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "monospace", "p8"], [1, "m4"], [3, "dropWidth", "loaded"], ["fxLayout.lt-md", "column", "fxLayout.gt-sm", "row | wrap", "fxLayoutAlign", "start stretch", 1, "p8", "background-default", "el-8", "scroll-container", "control-panel"], ["fxLayout", "column", "fxLayoutAlign", "start stretch"], ["fxLayout", "row", "fxLayoutAlign", "start center", "fxLayoutGap", "4px", 1, "m4"], ["fxFlex", ""], ["matInput", "", 3, "ngModel", "ngModelChange"], ["mat-icon-button", "", "color", "primary", "matTooltip", "Export Wallpaper"], [1, "material-icons-outlined"], [3, "mini", "loaded"], ["fxFlex", "", 3, "wallpaper", "refresh"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "section", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "app-header", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "section", 2, 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("resize", function AppComponent_Template_section_resize_2_listener() { return ctx.resize(); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresolveWindow"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, AppComponent_ng_container_4_Template, 6, 6, "ng-container", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, AppComponent_ng_container_4_Template, 8, 11, "ng-container", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](5, AppComponent_image_loader_5_Template, 1, 1, "image-loader", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](6, AppComponent_section_6_Template, 12, 3, "section", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        let tmp_2_0;
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngClass", ctx.themer.isLight ? "app-light" : "app-dark");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("loading", ctx.loading);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("fxLayoutAlign", (tmp_2_0 = ctx.wallpaper == null ? null : ctx.wallpaper.alignment) !== null && tmp_2_0 !== undefined ? tmp_2_0 : "center center");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.imageSrc && ctx.wallpaper);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.wallpaper);
@@ -290,6 +290,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const _c0 = ["width"];
 const _c1 = ["height"];
 class AspectRatioEditorComponent {
@@ -301,35 +302,37 @@ class AspectRatioEditorComponent {
         this.unlockIcon = 'lock_open';
         this.lockStyle = 'material-icons-outlined';
         this.unlockStyle = 'material-icons-outlined';
-        this.update = () => {
+        this.refresh = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
+        this.sync = (emit = true) => {
             this.w = this.ar.width;
             this.h = this.ar.height;
+            emit && this.refresh.emit();
         };
         this.updateLock = (locked) => this.ar.locked = locked;
         this.reset = () => {
             this.ar.reset();
-            this.update();
+            this.sync();
         };
     }
     set data(data) {
         if (data) {
             this.ar = data;
-            this.update();
+            this.sync();
         }
     }
     ngAfterViewInit() {
-        this.update();
+        this.sync(false);
         this.subs.push(this.core.generateInputObservable(this.width)
             .subscribe((data) => {
             if (Number.isInteger(+data)) {
                 this.ar.setWidth(+data);
-                this.update();
+                this.sync();
             }
         }), this.core.generateInputObservable(this.height)
             .subscribe((data) => {
             if (Number.isInteger(+data)) {
                 this.ar.setHeight(+data);
-                this.update();
+                this.sync();
             }
         }));
     }
@@ -345,7 +348,7 @@ AspectRatioEditorComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.width = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.height = _t.first);
-    } }, inputs: { data: "data", gap: "gap", lockIcon: "lockIcon", unlockIcon: "unlockIcon", lockStyle: "lockStyle", unlockStyle: "unlockStyle" }, decls: 20, vars: 12, consts: [["fxLayout", "row", "fxLayoutAlign", "start center", 3, "fxLayoutGap"], [3, "value", "change"], [3, "value"], ["fxFlex", ""], ["matInput", "", "type", "number", "min", "0", 3, "ngModel", "ngModelChange"], ["width", ""], ["height", ""], ["mat-button", "", "color", "primary", 3, "click"]], template: function AspectRatioEditorComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, inputs: { data: "data", gap: "gap", lockIcon: "lockIcon", unlockIcon: "unlockIcon", lockStyle: "lockStyle", unlockStyle: "unlockStyle" }, outputs: { refresh: "refresh" }, decls: 20, vars: 12, consts: [["fxLayout", "row", "fxLayoutAlign", "start center", 3, "fxLayoutGap"], [3, "value", "change"], [3, "value"], ["fxFlex", ""], ["matInput", "", "type", "number", "min", "0", 3, "ngModel", "ngModelChange"], ["width", ""], ["height", ""], ["mat-button", "", "color", "primary", 3, "click"]], template: function AspectRatioEditorComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "section", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-button-toggle-group", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("change", function AspectRatioEditorComponent_Template_mat_button_toggle_group_change_1_listener($event) { return ctx.updateLock($event.value); });
@@ -872,6 +875,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function WallpaperEditorComponent_mat_option_46_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
@@ -935,10 +939,11 @@ border-style:
 * outset
 `;
         this.editorStyle = 'p8';
+        this.refresh = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
     }
 }
 WallpaperEditorComponent.ɵfac = function WallpaperEditorComponent_Factory(t) { return new (t || WallpaperEditorComponent)(); };
-WallpaperEditorComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: WallpaperEditorComponent, selectors: [["wallpaper-editor"]], inputs: { wallpaper: "wallpaper", editorStyle: "editorStyle" }, decls: 51, vars: 12, consts: [["fxLayout", "column", "fxLayoutAlign", "start stretch"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start center"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", "fxFlex", "", 1, "p8", "m4", "background-card", "rounded"], [1, "mat-subheading-1"], [3, "data"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "p8", "m4", "background-card", "rounded"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start center", "fxLayoutGap", "12px"], ["fxFlex", ""], ["matInput", "", 3, "ngModel", "ngModelChange"], ["mat-icon-button", "", "color", "primary", 3, "click"], ["matTooltipClass", "pre-line large-tooltip", "matTooltipPosition", "above", 3, "matTooltip"], ["backdropInfo", "matTooltip"], ["filterInfo", "matTooltip"], ["borderInfo", "matTooltip"], [3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], ["matTooltipClass", "pre-line large-tooltip", "matTooltipPosition", "above", "matTooltip", "Indicates alignment of the image within the container"], ["alignInfo", "matTooltip"], [3, "value"]], template: function WallpaperEditorComponent_Template(rf, ctx) { if (rf & 1) {
+WallpaperEditorComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: WallpaperEditorComponent, selectors: [["wallpaper-editor"]], inputs: { wallpaper: "wallpaper", editorStyle: "editorStyle" }, outputs: { refresh: "refresh" }, decls: 51, vars: 12, consts: [["fxLayout", "column", "fxLayoutAlign", "start stretch"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start center"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", "fxFlex", "", 1, "p8", "m4", "background-card", "rounded"], [1, "mat-subheading-1"], [3, "data", "refresh"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "p8", "m4", "background-card", "rounded"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start center", "fxLayoutGap", "12px"], ["fxFlex", ""], ["matInput", "", 3, "ngModel", "ngModelChange"], ["mat-icon-button", "", "color", "primary", 3, "click"], ["matTooltipClass", "pre-line large-tooltip", "matTooltipPosition", "above", 3, "matTooltip"], ["backdropInfo", "matTooltip"], ["filterInfo", "matTooltip"], ["borderInfo", "matTooltip"], [3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], ["matTooltipClass", "pre-line large-tooltip", "matTooltipPosition", "above", "matTooltip", "Indicates alignment of the image within the container"], ["alignInfo", "matTooltip"], [3, "value"]], template: function WallpaperEditorComponent_Template(rf, ctx) { if (rf & 1) {
         const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "section", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "section", 1);
@@ -946,13 +951,17 @@ WallpaperEditorComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_M
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "p", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, "Container Size");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "aspect-ratio-editor", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "aspect-ratio-editor", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("refresh", function WallpaperEditorComponent_Template_aspect_ratio_editor_refresh_5_listener() { return ctx.refresh.emit(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "section", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "p", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "Image Size");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](9, "aspect-ratio-editor", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "aspect-ratio-editor", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("refresh", function WallpaperEditorComponent_Template_aspect_ratio_editor_refresh_9_listener() { return ctx.refresh.emit(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "section", 5);
@@ -1293,19 +1302,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 class AspectRatio {
     constructor(width, height, locked = false) {
-        this.getAspectHeight = (newWidth) => Math.floor(newWidth * (this.height / this.width));
-        this.getAspectWidth = (newHeight) => Math.floor(newHeight * (this.height / this.width));
+        this.ensureGreaterThanZero = (value) => value > 0 ? value : 1;
+        this.getAspectHeight = (newWidth) => this.ensureGreaterThanZero(Math.floor(newWidth * (this.height / this.width)));
+        this.getAspectWidth = (newHeight) => this.ensureGreaterThanZero(Math.floor(newHeight * (this.width / this.height)));
+        this.scaleHeight = (factor) => this.ensureGreaterThanZero(Math.floor(this.height * factor));
+        this.scaleWidth = (factor) => this.ensureGreaterThanZero(Math.floor(this.width * factor));
         this.setHeight = (height, lock = this.locked) => {
             const width = this.getAspectWidth(height);
             this._height = height;
             if (lock)
-                this._width = width > 0 ? width : 0;
+                this._width = width;
         };
         this.setWidth = (width, lock = this.locked) => {
             const height = this.getAspectHeight(width);
             this._width = width;
             if (lock)
-                this._height = height > 0 ? height : 0;
+                this._height = height;
         };
         this.reset = () => {
             this._width = this.originalWidth;
@@ -1364,27 +1376,54 @@ __webpack_require__.r(__webpack_exports__);
 class Preview {
     constructor(width, height, wallpaper) {
         this.buildRatio = (source, container, padding = 0) => {
-            const sideA = source.width > source.height
-                ? source.width > (container.width - padding)
-                    ? { size: container.width - padding, isWidth: true }
-                    : { size: source.width, isWidth: true }
-                : source.height > (container.height - padding)
-                    ? { size: container.height - padding, isWidth: false }
-                    : { size: source.height, isWidth: false };
-            const sideB = sideA.isWidth
-                ? { size: source.getAspectHeight(sideA.size), isWidth: false }
-                : { size: source.getAspectWidth(sideA.size), isWidth: true };
-            return sideA.isWidth
-                ? new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(sideA.size, sideB.size)
-                : new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(sideB.size, sideA.size);
+            const adjust = (source.width > container.width - padding) || (source.height > container.height - padding);
+            if (adjust) {
+                let w;
+                let h;
+                if (source.width > container.width - padding && source.height > container.height - padding) {
+                    if (source.width >= source.height) {
+                        w = container.width - padding;
+                        h = source.getAspectHeight(w);
+                    }
+                    else {
+                        h = container.height - padding;
+                        w = source.getAspectWidth(h);
+                    }
+                    return this.buildRatio(new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(w, h), container, padding);
+                }
+                else if (source.width > container.width - padding) {
+                    w = container.width - padding;
+                    h = source.getAspectHeight(w);
+                    return new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(w, h);
+                }
+                else {
+                    h = container.height - padding;
+                    w = source.getAspectWidth(h);
+                    return new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(w, h);
+                }
+            }
+            else
+                return new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(source.width, source.height);
         };
-        this.updateContainer = (wp) => this.containerSize = this.buildRatio(wp.containerSize, this.previewSize, 24);
-        this.updateImage = (wp) => this.imageSize = this.buildRatio(wp.imageSize, this.containerSize);
+        this.calculateRatio = (original, result) => {
+            const difference = original - result;
+            return difference / original;
+        };
+        this.updateContainer = (wp) => {
+            this.containerSize = this.buildRatio(wp.containerSize, this.previewSize, 24);
+            const widthRatio = this.calculateRatio(wp.containerSize.width, this.containerSize.width);
+            const heightRatio = this.calculateRatio(wp.containerSize.height, this.containerSize.height);
+            return { widthRatio, heightRatio };
+        };
+        this.updateImage = (wp, scale) => {
+            const scaledImage = new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(wp.imageSize.scaleWidth(scale.widthRatio), wp.imageSize.scaleHeight(scale.heightRatio));
+            this.imageSize = this.buildRatio(scaledImage, this.containerSize);
+        };
         this.update = (width, height, wallpaper) => {
             this.previewSize = new _aspect_ratio__WEBPACK_IMPORTED_MODULE_0__.AspectRatio(width, height);
             if ((wallpaper === null || wallpaper === void 0 ? void 0 : wallpaper.containerSize) && (wallpaper === null || wallpaper === void 0 ? void 0 : wallpaper.imageSize)) {
-                this.updateContainer(wallpaper);
-                this.updateImage(wallpaper);
+                const scale = this.updateContainer(wallpaper);
+                this.updateImage(wallpaper, scale);
             }
         };
         this.render = () => this.containerSize && this.imageSize
