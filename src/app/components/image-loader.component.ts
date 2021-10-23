@@ -17,7 +17,7 @@ export class ImageLoaderComponent implements OnInit {
   @ViewChild('fileInput') fileInput!: ElementRef;
 
   @Input() mini: boolean = false;
-  @Input() dropWidth: number = 440;
+  @Input() dropWidth: number | string = 'auto';
   @Input() dropHeight: number = 440;
   @Input() dropStyle = 'm4 rounded background-default card-outline-accent border-x-dashed border-width-2';
 
@@ -30,10 +30,6 @@ export class ImageLoaderComponent implements OnInit {
   hovered: boolean = false;
 
   ngOnInit() {
-    this.dropWidth = this.mini
-      ? 360
-      : this.dropWidth;
-
     this.dropHeight = this.mini
       ? 120
       : this.dropHeight;

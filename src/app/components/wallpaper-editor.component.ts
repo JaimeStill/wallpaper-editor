@@ -70,5 +70,5 @@ border-style:
 
 
   @Input() wallpaper!: Wallpaper;
-  @Input() editorStyle: string = 'p8 scroll-container';
+  @Input() editorStyle: string = 'p8';
 }
