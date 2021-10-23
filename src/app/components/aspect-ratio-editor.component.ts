@@ -2,8 +2,10 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  EventEmitter,
   Input,
   OnDestroy,
+  Output,
   ViewChild
 } from '@angular/core';
 
@@ -25,7 +27,7 @@ export class AspectRatioEditorComponent implements AfterViewInit, OnDestroy {
   @Input() set data(data: AspectRatio) {
     if (data) {
       this.ar = data;
-      this.update();
+      this.sync();
     }
   }
 
@@ -38,17 +40,21 @@ export class AspectRatioEditorComponent implements AfterViewInit, OnDestroy {
   @ViewChild('width') width!: ElementRef;
   @ViewChild('height') height!: ElementRef;
 
+  @Output() refresh = new EventEmitter();
+
   constructor(
     private core: CoreService
   ) { }
 
-  private update = () => {
+  private sync = (emit: boolean = true) => {
     this.w = this.ar.width;
     this.h = this.ar.height;
+
+    emit && this.refresh.emit();
   }
 
   ngAfterViewInit() {
-    this.update();
+    this.sync(false);
 
     this.subs.push(
       this.core.generateInputObservable(this.width)
@@ -56,7 +62,7 @@ export class AspectRatioEditorComponent implements AfterViewInit, OnDestroy {
           (data: string) => {
             if (Number.isInteger(+data)) {
               this.ar.setWidth(+data);
-              this.update();
+              this.sync();
             }
           }
         ),
@@ -65,7 +71,7 @@ export class AspectRatioEditorComponent implements AfterViewInit, OnDestroy {
           (data: string) => {
             if (Number.isInteger(+data)) {
               this.ar.setHeight(+data);
-              this.update();
+              this.sync();
             }
           }
         )
@@ -80,6 +86,6 @@ export class AspectRatioEditorComponent implements AfterViewInit, OnDestroy {
 
   reset = () => {
     this.ar.reset();
-    this.update();
+    this.sync();
   }
 }
