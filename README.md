@@ -11,10 +11,7 @@
 
 ## Tasks
 
-* Controls for Setting `Wallpaper` properties
 * Build Editor Preview
-* Use a service to isolate scope of different `Wallpaper` instances that can be saved in `localStorage` state.
-    * Integrate `@angular/router` for optional params that use the name of the wallpaper from `localStorage`.
 * Build Export Functionality
     * Ensure styles are applied to isolated DOM element. Adapt strategy.
 
