@@ -5,18 +5,23 @@
   <app-header heading="Wallpaper Editor"
               containerStyle="p8 background-card"
               [loading]="loading"></app-header>
-  <section fxFlex
+  <section #previewElement
+           fxFlex
            fxLayout="column"
            [fxLayoutAlign]="wallpaper?.alignment ?? 'center center'"
-           class="p8 scroll-container background-card">
+           class="p8 scroll-container background-card"
+           (window:resize)="resize()">
     <ng-container *ngIf="imageSrc && wallpaper">
-      <img height="300"
+      <img [height]="preview.imageSize.height"
+           [width]="preview.imageSize.width"
            [src]="imageSrc"
            [alt]="wallpaper.name">
       <section fxLayout="column"
                fxLayoutAlign="start stretch"
                class="monospace p8">
         <p class="m4">{{wallpaper.render()}}</p>
+        <p *ngIf="preview"
+           class="m4">{{preview.render()}}</p>
       </section>
     </ng-container>
     <image-loader *ngIf="!(wallpaper)"
