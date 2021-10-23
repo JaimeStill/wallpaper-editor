@@ -3,18 +3,17 @@ import { AspectRatio } from './aspect-ratio';
 export class Wallpaper {
   private _containerSize: AspectRatio;
   private _imageSize: AspectRatio;
-  private _padding: number = 0;
 
   src: string;
   file: File;
   name: string;
   backdropFilter: string = '';
   filter: string = '';
+  border: string = '';
   alignment: string = 'center center';
 
   public get containerSize() { return this._containerSize; }
   public get imageSize() { return this._imageSize; }
-  public get padding() { return this._padding; }
 
   constructor(
     src: string,
@@ -36,34 +35,15 @@ export class Wallpaper {
     this._containerSize = new AspectRatio(containerWidth, containerHeight, false);
   }
 
-  private setHeightAndWidth = () => {
-    this.setImageHeight(this.imageSize.height);
-    this.setImageWidth(this.imageSize.width);
-  }
-
-  setContainerHeight = (height: number, locked: boolean = false) =>
-    this.containerSize.setHeight(height, locked);
-
-  setContainerWidth = (width: number, locked: boolean = false) =>
-    this.containerSize.setWidth(width, locked);
-
-  setImageHeight = (height: number) => this.imageSize.setHeight(height - this.padding);
-  setImageWidth = (width: number) => this.imageSize.setWidth(width - this.padding);
-
-  setPadding = (padding: number) => {
-    this._padding = padding;
-    
-    this.imageSize.width === this.imageSize.height
-      ? this.setHeightAndWidth()
-        : this.imageSize.width < this.imageSize.height
-          ? this.setImageWidth(this.imageSize.width)
-          : this.setImageHeight(this.imageSize.height);
-  }
+  setContainerHeight = (height: number) => this.containerSize.setHeight(height);
+  setContainerWidth = (width: number) => this.containerSize.setWidth(width);
+  setImageHeight = (height: number) => this.imageSize.setHeight(height);
+  setImageWidth = (width: number) => this.imageSize.setWidth(width);
 
   render = () => `Container: ${this.containerSize.render()}, Image: ${this.imageSize.render()}`;
 
   reset = () => {
     this.containerSize.reset();
-    this.imageSize.reset(this.padding);
+    this.imageSize.reset();
   }
 }

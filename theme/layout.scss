@@ -10,8 +10,21 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.monospace {
+  font-family: 'Consolas', 'Liberation Mono', 'Monaco', 'Lucida Console', monospace;
+}
+
+.mat-tooltip.large-tooltip {
+  font-size: 1rem;
+  max-width: 420px;
+}
+
 .app-frame {
   height: 100%;
+}
+
+.scroll-container {
+  overflow: auto;
 }
 
 input[type="file"].styled {

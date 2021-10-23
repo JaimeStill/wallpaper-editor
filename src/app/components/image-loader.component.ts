@@ -3,6 +3,7 @@ import {
   ElementRef,
   EventEmitter,
   Input,
+  OnInit,
   Output,
   ViewChild
 } from '@angular/core';
@@ -12,12 +13,13 @@ import {
   templateUrl: 'image-loader.component.html',
   styleUrls: ['image-loader.component.css']
 })
-export class ImageLoaderComponent {
+export class ImageLoaderComponent implements OnInit {
   @ViewChild('fileInput') fileInput!: ElementRef;
 
-  @Input() dropWidth: number = 500;
+  @Input() mini: boolean = false;
+  @Input() dropWidth: number = 440;
   @Input() dropHeight: number = 440;
-  @Input() dropStyle = 'm4 rounded background-card card-outline-accent border-x-dashed border-width-2';
+  @Input() dropStyle = 'm4 rounded background-default card-outline-accent border-x-dashed border-width-2';
 
   @Input() dropIconScale: number = 5;
   @Input() dropIcon = 'file_upload';
@@ -26,6 +28,16 @@ export class ImageLoaderComponent {
   @Output() loaded = new EventEmitter<File>();
 
   hovered: boolean = false;
+
+  ngOnInit() {
+    this.dropWidth = this.mini
+      ? 360
+      : this.dropWidth;
+
+    this.dropHeight = this.mini
+      ? 120
+      : this.dropHeight;
+  }
 
   fileChange = (event: any) => {
     if (event.target?.files?.length > 0) {

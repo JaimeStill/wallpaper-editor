@@ -13,11 +13,12 @@ export class HeaderComponent {
   @Input() alignment: string = 'space-between center';
   @Input() containerStyle: string = 'p8';
   @Input() headerStyle: string = 'm4 mat-title';
-  @Input() heading = 'Heading';
-  @Input() lightIcon = 'brightness_5';
-  @Input() lightIconColor = 'color-amber';
-  @Input() darkIcon = 'brightness_3';
-  @Input() darkIconColor = 'color-text';
+  @Input() heading: string = 'Heading';
+  @Input() lightIcon: string = 'brightness_5';
+  @Input() lightIconColor: string = 'color-amber';
+  @Input() darkIcon: string = 'brightness_3';
+  @Input() darkIconColor: string = 'color-text';
+  @Input() loading: boolean = false;
 
   constructor(
     public themer: ThemeService

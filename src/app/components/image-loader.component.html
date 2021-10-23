@@ -21,5 +21,10 @@
                 [ngClass]="dropIconClass">{{dropIcon}}</mat-icon>
     </section>
   </section>
+  <p class="m4 mat-caption"
+     fxFlexAlign="center"
+     [style.max-width.px]="dropWidth">
+    Click or drop a file into the area above to upload.
+  </p>
   <link-loader (loaded)="emitFile($event)"></link-loader>
 </section>

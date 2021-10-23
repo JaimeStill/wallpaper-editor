@@ -1,0 +1,32 @@
+<section fxLayout="row"
+         fxLayoutAlign="start center"
+         [fxLayoutGap]="gap">
+  <mat-button-toggle-group [value]="ar.locked"
+                           (change)="updateLock($event.value)">
+    <mat-button-toggle [value]="true">
+      <mat-icon [class]="lockStyle">{{lockIcon}}</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle [value]="false">
+      <mat-icon [class]="unlockStyle">{{unlockIcon}}</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  <mat-form-field fxFlex>
+    <mat-label>Width</mat-label>
+    <input #width
+           matInput
+           type="number"
+           min="0"
+           [(ngModel)]="w">
+  </mat-form-field>
+  <mat-form-field fxFlex>
+    <mat-label>Height</mat-label>
+    <input #height
+           matInput
+           type="number"
+           min="0"
+           [(ngModel)]="h">
+  </mat-form-field>
+  <button mat-button
+          color="primary"
+          (click)="reset()">Reset</button>
+</section>

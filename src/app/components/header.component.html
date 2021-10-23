@@ -9,3 +9,6 @@
     <mat-icon *ngIf="!(themer.isLight)">{{darkIcon}}</mat-icon>
   </button>
 </section>
+<mat-progress-bar *ngIf="loading"
+                  mode="indeterminate"
+                  color="accent"></mat-progress-bar>
