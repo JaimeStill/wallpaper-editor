@@ -30,21 +30,27 @@
         <input matInput
                [(ngModel)]="wallpaper.backdropFilter" />
       </mat-form-field>
-      <mat-icon color="primary"
-                class="cursor-default"
-                matTooltipClass='pre-line large-tooltip'
-                matTooltipPosition="above"
-                [matTooltip]="backdropTip">help_outline</mat-icon>
+      <button mat-icon-button
+              color="primary"
+              (click)="backdropInfo.toggle()">
+        <mat-icon #backdropInfo="matTooltip"
+                  matTooltipClass='pre-line large-tooltip'
+                  matTooltipPosition="above"
+                  [matTooltip]="backdropTip">help_outline</mat-icon>
+      </button>
       <mat-form-field fxFlex>
         <mat-label>Image Filters</mat-label>
         <input matInput
                [(ngModel)]="wallpaper.filter" />
       </mat-form-field>
-      <mat-icon color="primary"
-                class="cursor-default"
-                matTooltipClass='pre-line large-tooltip'
-                matTooltipPosition="above"
-                [matTooltip]="filterTip">help_outline</mat-icon>
+      <button mat-icon-button
+              color="primary"
+              (click)="filterInfo.toggle()">
+        <mat-icon #filterInfo="matTooltip"
+                  matTooltipClass='pre-line large-tooltip'
+                  matTooltipPosition="above"
+                  [matTooltip]="filterTip">help_outline</mat-icon>
+      </button>
     </section>
   </section>
   <section fxLayout="column"
@@ -59,11 +65,14 @@
         <input matInput
                [(ngModel)]="wallpaper.border" />
       </mat-form-field>
-      <mat-icon color="primary"
-                class="cursor-default"
-                matTooltipClass="pre-line large-tooltip"
-                matTooltipPosition="above"
-                [matTooltip]="borderTip">help_outline</mat-icon>
+      <button mat-icon-button
+              color="primary"
+              (click)="borderInfo.toggle()">
+        <mat-icon #borderInfo="matTooltip"
+                  matTooltipClass="pre-line large-tooltip"
+                  matTooltipPosition="above"
+                  [matTooltip]="borderTip">help_outline</mat-icon>
+      </button>
       <mat-form-field fxFlex>
         <mat-label>Alignment</mat-label>
         <mat-select [(ngModel)]="wallpaper.alignment">
@@ -71,11 +80,14 @@
                       [value]="a">{{a}}</mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-icon color="primary"
-                class="cursor-default"
-                matTooltipClass="pre-line large-tooltip"
-                matTooltipPosition="above"
-                matTooltip="Indicates alignment of the image within the container">help_outline</mat-icon>
+      <button mat-icon-button
+              color="primary"
+              (click)="alignInfo.toggle()">
+        <mat-icon #alignInfo="matTooltip"
+                  matTooltipClass="pre-line large-tooltip"
+                  matTooltipPosition="above"
+                  matTooltip="Indicates alignment of the image within the container">help_outline</mat-icon>
+      </button>
     </section>
   </section>
 </section>
