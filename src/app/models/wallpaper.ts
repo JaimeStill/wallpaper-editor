@@ -1,3 +1,4 @@
+import { SafeUrl } from '@angular/platform-browser';
 import { AspectRatio } from './aspect-ratio';
 
 export class Wallpaper {
@@ -5,6 +6,7 @@ export class Wallpaper {
   private _imageSize: AspectRatio;
 
   src: string;
+  url: SafeUrl;
   file: File;
   name: string;
   backdropFilter: string = '';
@@ -17,6 +19,7 @@ export class Wallpaper {
 
   constructor(
     src: string,
+    url: SafeUrl,
     file: File,
     imageWidth: number,
     imageHeight: number,
@@ -28,11 +31,12 @@ export class Wallpaper {
     containerHeight = containerHeight && containerHeight > imageHeight ? containerHeight : imageHeight;
 
     this.src = src;
+    this.url = url;
     this.file = file;
     this.name = name;
 
     this._imageSize = new AspectRatio(imageWidth, imageHeight, true);
-    this._containerSize = new AspectRatio(containerWidth, containerHeight, false);
+    this._containerSize = new AspectRatio(containerWidth, containerHeight);
   }
 
   setContainerHeight = (height: number) => this.containerSize.setHeight(height);

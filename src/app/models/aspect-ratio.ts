@@ -9,7 +9,7 @@ export class AspectRatio {
   constructor(
     width: number,
     height: number,
-    locked: boolean
+    locked: boolean = false
   ) {
     this._originalWidth = this._width = width;
     this._originalHeight = this._height = height;
