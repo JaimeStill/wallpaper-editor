@@ -3,30 +3,51 @@
          fxLayoutAlign="start stretch"
          [ngClass]="themer.isLight ? 'app-light' : 'app-dark'">
   <app-header heading="Wallpaper Editor"
-              containerStyle="p8"></app-header>
+              containerStyle="p8 background-card"
+              [loading]="loading"></app-header>
   <section fxFlex
            fxLayout="column"
-           fxLayoutAlign="center center"
-           class="p8">
-    <img *ngIf="imageSrc && wallpaper" height="300" [src]="imageSrc" [alt]="wallpaper.name">
-    <section fxLayout="row | wrap"
-             fxLayoutAlign="center center"
-             fxLayoutGap="16px">
-      <image-loader (loaded)="load($event)"></image-loader>
-      <code class="color-green background-card px8 py4 m4 card-outline-accent rounded glow-accent"
-            *ngIf="wallpaper">
-      <pre class="rounded">{{wallpaper | json}}</pre>
-    </code>
-    </section>
+           [fxLayoutAlign]="wallpaper?.alignment ?? 'center center'"
+           class="p8 scroll-container background-card">
+    <ng-container *ngIf="imageSrc && wallpaper">
+      <img height="300"
+           [src]="imageSrc"
+           [alt]="wallpaper.name">
+      <section fxLayout="column"
+               fxLayoutAlign="start stretch"
+               class="monospace p8">
+        <p class="m4">{{wallpaper.render()}}</p>
+      </section>
+    </ng-container>
+    <image-loader *ngIf="!(wallpaper)"
+                  (loaded)="load($event)"></image-loader>
   </section>
   <section *ngIf="wallpaper"
-           fxLayout="column"
+           fxLayout="row | wrap"
            fxLayoutAlign="start stretch"
-           class="background-card">
-    <section class="p8"
-             fxLayout="row"
-             fxLayoutAlign="center center">
-      <p class="m4 mat-title">Controls</p>
+           class="background-default el-8">
+    <section fxLayout="column"
+             fxLayoutAlign="start stretch"
+             class="p8">
+      <section fxLayout="row"
+               fxLayoutAlign="start center"
+               fxLayoutGap="4px"
+               class="m4">
+        <mat-form-field fxFlex>
+          <mat-label>Name</mat-label>
+          <input matInput
+                 [(ngModel)]="wallpaper.name" />
+        </mat-form-field>
+        <button mat-icon-button
+                color="primary"
+                matTooltip="Export Wallpaper">
+          <mat-icon class="material-icons-outlined">file_download</mat-icon>
+        </button>
+      </section>
+      <image-loader [mini]="true"
+                    (loaded)="load($event)"></image-loader>
     </section>
+    <wallpaper-editor fxFlex
+                      [wallpaper]="wallpaper"></wallpaper-editor>
   </section>
 </section>

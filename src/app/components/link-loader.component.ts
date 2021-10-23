@@ -27,7 +27,7 @@ export class LinkLoaderComponent implements AfterViewInit, OnDestroy {
   @Input() extensions: string[] = ['.jpg', '.png'];
   @Input() gap: string = '16px';
   @Input() buttonStyle = 'color-primary';
-  @Input() label = 'Load Link';
+  @Input() label = 'Load Image';
 
   @Output() loaded = new EventEmitter<File>();
   @ViewChild('linkInput') linkInput!: ElementRef;
@@ -68,6 +68,8 @@ export class LinkLoaderComponent implements AfterViewInit, OnDestroy {
   ngOnDestroy() {
     this.sub?.unsubscribe();
   }
+
+  extStrings = () => this.extensions.join(', ');
 
   load = async () => {
     if (this.valid && this.dirty) {

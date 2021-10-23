@@ -3,11 +3,12 @@
          [fxLayoutGap]="gap"
          class="mt4 mx4">
   <mat-form-field fxFlex>
-    <mat-label>Link</mat-label>
+    <mat-label>URL</mat-label>
     <input matInput
            #linkInput />
+    <mat-hint *ngIf="!(dirty)">Load an image of type: {{extStrings()}}</mat-hint>
     <mat-hint *ngIf="!(valid) && dirty"
-              class="color-warn">Link must end with an extension: {{extensions.join(', ')}}</mat-hint>
+              class="color-warn">Link must end with an extension: {{extStrings()}}</mat-hint>
     <mat-hint *ngIf="error"
               class="color-warn">{{error}}</mat-hint>
   </mat-form-field>

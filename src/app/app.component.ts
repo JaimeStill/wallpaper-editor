@@ -16,8 +16,7 @@ import { ThemeService } from './services';
   templateUrl: 'app.component.html'
 })
 export class AppComponent implements OnInit {
-  monospace = 'Consolas, Liberation Mono, Monaco, Lucida Console, monospace';
-  output: string[] = [];
+  loading: boolean = false;
   wallpaper!: Wallpaper;
   imageSrc!: SafeUrl;
 
@@ -30,12 +29,14 @@ export class AppComponent implements OnInit {
 
   load = (file: File) => {
     if (file) {
+      this.loading = true;
       const img = document.createElement('img');
       img.src = URL.createObjectURL(file);
 
       img.onload = () => {
         this.wallpaper = new Wallpaper(img.src, file, img.width, img.height, file.name?.split('.')[0]);
         this.imageSrc = this.sanitizer.bypassSecurityTrustUrl(img.src);
+        this.loading = false;
       }
     }
   }

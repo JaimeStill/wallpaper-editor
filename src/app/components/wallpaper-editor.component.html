@@ -1,0 +1,81 @@
+<section fxLayout="column"
+         fxLayoutAlign="start stretch"
+         [class]="editorStyle">
+  <section fxLayout="row | wrap"
+           fxLayoutAlign="start center">
+    <section fxLayout="column"
+             fxLayoutAlign="start stretch"
+             fxFlex
+             class="p8 m4 background-card rounded">
+      <p class="mat-subheading-1">Container Size</p>
+      <aspect-ratio-editor [data]="wallpaper.containerSize"></aspect-ratio-editor>
+    </section>
+    <section fxLayout="column"
+             fxLayoutAlign="start stretch"
+             fxFlex
+             class="p8 m4 background-card rounded">
+      <p class="mat-subheading-1">Image Size</p>
+      <aspect-ratio-editor [data]="wallpaper.imageSize"></aspect-ratio-editor>
+    </section>
+  </section>
+  <section fxLayout="column"
+           fxLayoutAlign="start stretch"
+           class="p8 m4 background-card rounded">
+    <p class="mat-subheading-1">Filters</p>
+    <section fxLayout="row | wrap"
+             fxLayoutAlign="start center"
+             fxLayoutGap="12px">
+      <mat-form-field fxFlex>
+        <mat-label>Container Filters</mat-label>
+        <input matInput
+               [(ngModel)]="wallpaper.backdropFilter" />
+      </mat-form-field>
+      <mat-icon color="primary"
+                class="cursor-default"
+                matTooltipClass='pre-line large-tooltip'
+                matTooltipPosition="above"
+                [matTooltip]="backdropTip">help_outline</mat-icon>
+      <mat-form-field fxFlex>
+        <mat-label>Image Filters</mat-label>
+        <input matInput
+               [(ngModel)]="wallpaper.filter" />
+      </mat-form-field>
+      <mat-icon color="primary"
+                class="cursor-default"
+                matTooltipClass='pre-line large-tooltip'
+                matTooltipPosition="above"
+                [matTooltip]="filterTip">help_outline</mat-icon>
+    </section>
+  </section>
+  <section fxLayout="column"
+           fxLayoutAlign="start stretch"
+           class="p8 m4 background-card rounded">
+    <p class="mat-subheading-1">Image Settings</p>
+    <section fxLayout="row | wrap"
+             fxLayoutAlign="start center"
+             fxLayoutGap="12px">
+      <mat-form-field fxFlex>
+        <mat-label>Border</mat-label>
+        <input matInput
+               [(ngModel)]="wallpaper.border" />
+      </mat-form-field>
+      <mat-icon color="primary"
+                class="cursor-default"
+                matTooltipClass="pre-line large-tooltip"
+                matTooltipPosition="above"
+                [matTooltip]="borderTip">help_outline</mat-icon>
+      <mat-form-field fxFlex>
+        <mat-label>Alignment</mat-label>
+        <mat-select [(ngModel)]="wallpaper.alignment">
+          <mat-option *ngFor="let a of alignments"
+                      [value]="a">{{a}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-icon color="primary"
+                class="cursor-default"
+                matTooltipClass="pre-line large-tooltip"
+                matTooltipPosition="above"
+                matTooltip="Indicates alignment of the image within the container">help_outline</mat-icon>
+    </section>
+  </section>
+</section>
