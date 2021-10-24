@@ -139,7 +139,7 @@ class AppComponent {
                 img.src = URL.createObjectURL(file);
                 img.onload = () => {
                     var _a;
-                    this.wallpaper = new _models__WEBPACK_IMPORTED_MODULE_0__.Wallpaper(img.src, this.sanitizer.bypassSecurityTrustUrl(img.src), file, img.width, img.height, (_a = file.name) === null || _a === void 0 ? void 0 : _a.split('.')[0], window.screen.availWidth, window.screen.availHeight);
+                    this.wallpaper = new _models__WEBPACK_IMPORTED_MODULE_0__.Wallpaper(img.src, this.sanitizer.bypassSecurityTrustUrl(img.src), file, img.width, img.height, (_a = file.name) === null || _a === void 0 ? void 0 : _a.split('.')[0], 2560, 1440);
                     this.updatePreview(this.previewElement.nativeElement);
                     this.loading = false;
                 };
