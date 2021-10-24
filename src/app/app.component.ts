@@ -61,8 +61,8 @@ export class AppComponent implements AfterViewInit {
           img.width,
           img.height,
           file.name?.split('.')[0],
-          window.screen.availWidth,
-          window.screen.availHeight
+          2560,
+          1440
         );
 
         this.updatePreview(this.previewElement.nativeElement);
