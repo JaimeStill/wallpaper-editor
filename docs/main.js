@@ -71,7 +71,8 @@ function AppComponent_image_loader_5_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("loaded", function AppComponent_image_loader_5_Template_image_loader_loaded_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](); return ctx_r4.load($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("dropWidth", 400);
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("dropWidth", ctx_r2.setLoaderWidth())("dropHeight", ctx_r2.setLoaderHeight());
 } }
 function AppComponent_section_6_Template(rf, ctx) { if (rf & 1) {
     const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
@@ -92,6 +93,8 @@ class AppComponent {
         this.themer = themer;
         this.loading = false;
         this.updatePreview = (el) => this.preview = new _models__WEBPACK_IMPORTED_MODULE_0__.Preview(el.offsetWidth, el.offsetHeight, this.wallpaper);
+        this.setLoaderWidth = () => window.innerWidth > 300 ? window.innerWidth - 200 : 100;
+        this.setLoaderHeight = () => window.innerHeight > 300 ? window.innerHeight - 200 : 100;
         this.resize = () => {
             var _a;
             if ((_a = this.previewElement) === null || _a === void 0 ? void 0 : _a.nativeElement)
@@ -131,13 +134,13 @@ AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["�
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵloadQuery"]()) && (ctx.previewElement = _t.first);
-    } }, decls: 7, vars: 7, consts: [["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "mat-typography", "mat-app-background", "app-frame", 3, "ngClass"], ["heading", "Wallpaper Editor", "containerStyle", "p8 background-card", 3, "loading"], ["fxLayout", "column", "fxLayoutAlign", "center center", 1, "p8", "background-card", 3, "fxFlex.gt-sm", "fxFlex.lt-md", "resize"], ["previewElement", ""], [4, "ngIf"], [3, "dropWidth", "loaded", 4, "ngIf"], ["fxLayout.lt-md", "column", "fxLayout.gt-sm", "row | wrap", "fxLayoutAlign", "start stretch", "fxFlex.gt-sm", "40%", "fxFlex.lt-md", "60%", "class", "p8 background-default scroll-container", 4, "ngIf"], [3, "preview", "wallpaper"], [3, "dropWidth", "loaded"], ["fxLayout.lt-md", "column", "fxLayout.gt-sm", "row | wrap", "fxLayoutAlign", "start stretch", "fxFlex.gt-sm", "40%", "fxFlex.lt-md", "60%", 1, "p8", "background-default", "scroll-container"], ["fxFlex", "", 3, "wallpaper", "loaded", "refresh"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 7, vars: 7, consts: [["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "mat-typography", "mat-app-background", "app-frame", 3, "ngClass"], ["heading", "Wallpaper Editor", "containerStyle", "p8 background-card", 3, "loading"], ["fxLayout", "column", "fxLayoutAlign", "center center", 1, "p8", "background-card", 3, "fxFlex.gt-sm", "fxFlex.lt-md", "resize"], ["previewElement", ""], [4, "ngIf"], [3, "dropWidth", "dropHeight", "loaded", 4, "ngIf"], ["fxLayout.lt-md", "column", "fxLayout.gt-sm", "row | wrap", "fxLayoutAlign", "start stretch", "fxFlex.gt-sm", "40%", "fxFlex.lt-md", "60%", "class", "p8 background-default scroll-container", 4, "ngIf"], [3, "preview", "wallpaper"], [3, "dropWidth", "dropHeight", "loaded"], ["fxLayout.lt-md", "column", "fxLayout.gt-sm", "row | wrap", "fxLayoutAlign", "start stretch", "fxFlex.gt-sm", "40%", "fxFlex.lt-md", "60%", 1, "p8", "background-default", "scroll-container"], ["fxFlex", "", 3, "wallpaper", "loaded", "refresh"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "section", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](1, "app-header", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "section", 2, 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("resize", function AppComponent_Template_section_resize_2_listener() { return ctx.resize(); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresolveWindow"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](4, AppComponent_ng_container_4_Template, 2, 2, "ng-container", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](5, AppComponent_image_loader_5_Template, 1, 1, "image-loader", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](5, AppComponent_image_loader_5_Template, 1, 2, "image-loader", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](6, AppComponent_section_6_Template, 2, 1, "section", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
@@ -610,9 +613,8 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = ["fileInput"];
 class ImageLoaderComponent {
     constructor() {
-        this.mini = false;
         this.dropWidth = 'auto';
-        this.dropHeight = 440;
+        this.dropHeight = 'auto';
         this.dropStyle = 'm4 rounded background-default card-outline-accent border-x-dashed border-width-2';
         this.dropIconScale = 5;
         this.dropIcon = 'file_upload';
@@ -644,11 +646,6 @@ class ImageLoaderComponent {
         };
         this.emitFile = (file) => { var _a; return ((_a = file === null || file === void 0 ? void 0 : file.type) === null || _a === void 0 ? void 0 : _a.match(/image.*/)) && this.loaded.emit(file); };
     }
-    ngOnInit() {
-        this.dropHeight = this.mini
-            ? 180
-            : this.dropHeight;
-    }
 }
 ImageLoaderComponent.ɵfac = function ImageLoaderComponent_Factory(t) { return new (t || ImageLoaderComponent)(); };
 ImageLoaderComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ImageLoaderComponent, selectors: [["image-loader"]], viewQuery: function ImageLoaderComponent_Query(rf, ctx) { if (rf & 1) {
@@ -656,7 +653,7 @@ ImageLoaderComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODUL
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.fileInput = _t.first);
-    } }, inputs: { mini: "mini", dropWidth: "dropWidth", dropHeight: "dropHeight", dropStyle: "dropStyle", dropIconScale: "dropIconScale", dropIcon: "dropIcon", dropIconClass: "dropIconClass" }, outputs: { loaded: "loaded" }, decls: 10, vars: 13, consts: [["type", "file", "accept", "image/*", 1, "styled", 3, "change"], ["fileInput", ""], ["fxLayout", "column", "fxLayoutAlign", "start stretch"], [1, "drop-container", "cursor-pointer", 3, "ngClass", "click", "drop", "dragover", "dragleave"], ["fxLayout", "column", "fxLayoutAlign", "center center", 1, "drop-overlay"], [3, "ngClass"], ["fxFlexAlign", "center", 1, "m4", "mat-caption"], [3, "loaded"]], template: function ImageLoaderComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, inputs: { dropWidth: "dropWidth", dropHeight: "dropHeight", dropStyle: "dropStyle", dropIconScale: "dropIconScale", dropIcon: "dropIcon", dropIconClass: "dropIconClass" }, outputs: { loaded: "loaded" }, decls: 10, vars: 13, consts: [["type", "file", "accept", "image/*", 1, "styled", 3, "change"], ["fileInput", ""], ["fxLayout", "column", "fxLayoutAlign", "start stretch"], [1, "drop-container", "cursor-pointer", 3, "ngClass", "click", "drop", "dragover", "dragleave"], ["fxLayout", "column", "fxLayoutAlign", "center center", 1, "drop-overlay"], [3, "ngClass"], ["fxFlexAlign", "center", 1, "m4", "mat-caption"], [3, "loaded"]], template: function ImageLoaderComponent_Template(rf, ctx) { if (rf & 1) {
         const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "input", 0, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("change", function ImageLoaderComponent_Template_input_change_0_listener($event) { return ctx.fileChange($event); });
@@ -1013,7 +1010,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function WallpaperEditorComponent_mat_option_73_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-option", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-option", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -1085,7 +1082,7 @@ border-style:
     }
 }
 WallpaperEditorComponent.ɵfac = function WallpaperEditorComponent_Factory(t) { return new (t || WallpaperEditorComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__.DomSanitizer)); };
-WallpaperEditorComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: WallpaperEditorComponent, selectors: [["wallpaper-editor"]], inputs: { wallpaper: "wallpaper", editorStyle: "editorStyle", gap: "gap" }, outputs: { refresh: "refresh", loaded: "loaded" }, decls: 103, vars: 40, consts: [["animationDuration", "0ms", 1, "flexible"], ["label", "Container"], ["fxLayout", "column", "fxLayoutAlign", "start stretch"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start center"], ["label", "Container Size", "fxFlex", ""], [3, "data", "gap", "refresh"], ["label", "Background Image", "fxFlex", ""], ["fxLayout", "row", "fxLayoutAlign", "start center", 3, "fxLayoutGap"], [3, "ngModel", "ngModelChange"], ["imageGroup", "matButtonToggleGroup"], ["matTooltip", "No Image", 3, "value"], [1, "material-icons-outlined"], ["matTooltip", "Default Image", 3, "value"], ["matTooltip", "Custom Image", 3, "value"], ["fxFlex", ""], ["matInput", "", 3, "disabled", "ngModel", "input", "ngModelChange"], ["label", "Filters", "fxFlex", ""], ["fxLayout", "row", "fxLayoutAlign", "start center"], ["matInput", "", 3, "ngModel", "ngModelChange"], [3, "tip"], ["label", "Border", "fxFlex", ""], ["label", "Classes", "fxFlex", ""], ["label", "Color", "fxFlex", ""], ["label", "Size", "fxFlex", ""], ["label", "Position", "fxFlex", ""], ["label", "Clip", "fxFlex", ""], ["value", "border-box"], ["value", "padding-box"], ["value", "content-box"], ["value", "text"], ["label", "Repeat", "fxFlex", ""], ["label", "Image"], ["label", "Image Size", "fxFlex", ""], ["label", "Alignment", "fxFlex", ""], [3, "value", 4, "ngFor", "ngForOf"], ["label", "Transform", "fxFlex", ""], ["label", "File"], ["fxLayout", "row", "fxLayoutAlign", "start center", "fxLayoutGap", "4px", 1, "m4"], ["mat-icon-button", "", "color", "primary", "matTooltip", "Export Wallpaper"], [3, "mini", "loaded"], [3, "value"]], template: function WallpaperEditorComponent_Template(rf, ctx) { if (rf & 1) {
+WallpaperEditorComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: WallpaperEditorComponent, selectors: [["wallpaper-editor"]], inputs: { wallpaper: "wallpaper", editorStyle: "editorStyle", gap: "gap" }, outputs: { refresh: "refresh", loaded: "loaded" }, decls: 103, vars: 40, consts: [["animationDuration", "0ms", 1, "flexible"], ["label", "Container"], ["fxLayout.gt-lg", "row | wrap", "fxLayoutAlign.gt-lg", "start center", "fxLayout.lt-xl", "column", "fxLayoutAlign.lt-xl", "start stretch"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start center", "fxFlex.gt-lg", ""], ["label", "Container Size", "fxFlex", ""], [3, "data", "gap", "refresh"], ["label", "Background Image", "fxFlex", ""], ["fxLayout", "row", "fxLayoutAlign", "start center", 3, "fxLayoutGap"], [3, "ngModel", "ngModelChange"], ["imageGroup", "matButtonToggleGroup"], ["matTooltip", "No Image", 3, "value"], [1, "material-icons-outlined"], ["matTooltip", "Default Image", 3, "value"], ["matTooltip", "Custom Image", 3, "value"], ["fxFlex", ""], ["matInput", "", 3, "disabled", "ngModel", "input", "ngModelChange"], ["label", "Filters", "fxFlex", ""], ["fxLayout", "row", "fxLayoutAlign", "start center"], ["matInput", "", 3, "ngModel", "ngModelChange"], [3, "tip"], ["label", "Border", "fxFlex", ""], ["label", "Classes", "fxFlex", ""], ["label", "Color", "fxFlex", ""], ["label", "Size", "fxFlex", ""], ["label", "Position", "fxFlex", ""], ["label", "Clip", "fxFlex", ""], ["value", "border-box"], ["value", "padding-box"], ["value", "content-box"], ["value", "text"], ["label", "Repeat", "fxFlex", ""], ["label", "Image"], ["label", "Image Size", "fxFlex", ""], ["label", "Alignment", "fxFlex", ""], [3, "value", 4, "ngFor", "ngForOf"], ["label", "Transform", "fxFlex", ""], ["label", "File"], ["fxLayout", "column", "fxLayoutAlign", "start stretch"], ["fxLayout", "row", "fxLayoutAlign", "start center", "fxLayoutGap", "4px", 1, "m4"], ["mat-icon-button", "", "color", "primary", "matTooltip", "Export Wallpaper"], [3, "dropHeight", "loaded"], [3, "value"]], template: function WallpaperEditorComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-tab-group", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "mat-tab", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "section", 2);
@@ -1271,8 +1268,8 @@ WallpaperEditorComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_M
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](92, "mat-tab", 36);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](93, "section", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](94, "section", 37);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](93, "section", 37);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](94, "section", 38);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](95, "mat-form-field", 14);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](96, "mat-label");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](97, "Name");
@@ -1281,13 +1278,13 @@ WallpaperEditorComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_M
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function WallpaperEditorComponent_Template_input_ngModelChange_98_listener($event) { return ctx.wallpaper.name = $event; });
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](99, "button", 38);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](99, "button", 39);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](100, "mat-icon", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](101, "file_download");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](102, "image-loader", 39);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](102, "image-loader", 40);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("loaded", function WallpaperEditorComponent_Template_image_loader_loaded_102_listener($event) { return ctx.loaded.emit($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -1361,8 +1358,8 @@ WallpaperEditorComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_M
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx.wallpaper.name);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("mini", true);
-    } }, directives: [_angular_material_tabs__WEBPACK_IMPORTED_MODULE_6__.MatTabGroup, _angular_material_tabs__WEBPACK_IMPORTED_MODULE_6__.MatTab, _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__.DefaultLayoutDirective, _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__.DefaultLayoutAlignDirective, _editor_control_component__WEBPACK_IMPORTED_MODULE_0__.EditorControlComponent, _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__.DefaultFlexDirective, _aspect_ratio_editor_component__WEBPACK_IMPORTED_MODULE_1__.AspectRatioEditorComponent, _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__.DefaultLayoutGapDirective, _angular_material_button_toggle__WEBPACK_IMPORTED_MODULE_8__.MatButtonToggleGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgModel, _angular_material_button_toggle__WEBPACK_IMPORTED_MODULE_8__.MatButtonToggle, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_10__.MatTooltip, _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__.MatIcon, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__.MatLabel, _angular_material_input__WEBPACK_IMPORTED_MODULE_13__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.DefaultValueAccessor, _info_component__WEBPACK_IMPORTED_MODULE_2__.InfoComponent, _angular_material_select__WEBPACK_IMPORTED_MODULE_14__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_15__.MatOption, _angular_common__WEBPACK_IMPORTED_MODULE_16__.NgForOf, _angular_material_button__WEBPACK_IMPORTED_MODULE_17__.MatButton, _image_loader_component__WEBPACK_IMPORTED_MODULE_3__.ImageLoaderComponent], encapsulation: 2 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("dropHeight", 180);
+    } }, directives: [_angular_material_tabs__WEBPACK_IMPORTED_MODULE_6__.MatTabGroup, _angular_material_tabs__WEBPACK_IMPORTED_MODULE_6__.MatTab, _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__.DefaultLayoutDirective, _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__.DefaultLayoutAlignDirective, _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__.DefaultFlexDirective, _editor_control_component__WEBPACK_IMPORTED_MODULE_0__.EditorControlComponent, _aspect_ratio_editor_component__WEBPACK_IMPORTED_MODULE_1__.AspectRatioEditorComponent, _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_7__.DefaultLayoutGapDirective, _angular_material_button_toggle__WEBPACK_IMPORTED_MODULE_8__.MatButtonToggleGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgModel, _angular_material_button_toggle__WEBPACK_IMPORTED_MODULE_8__.MatButtonToggle, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_10__.MatTooltip, _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__.MatIcon, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__.MatLabel, _angular_material_input__WEBPACK_IMPORTED_MODULE_13__.MatInput, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.DefaultValueAccessor, _info_component__WEBPACK_IMPORTED_MODULE_2__.InfoComponent, _angular_material_select__WEBPACK_IMPORTED_MODULE_14__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_15__.MatOption, _angular_common__WEBPACK_IMPORTED_MODULE_16__.NgForOf, _angular_material_button__WEBPACK_IMPORTED_MODULE_17__.MatButton, _image_loader_component__WEBPACK_IMPORTED_MODULE_3__.ImageLoaderComponent], encapsulation: 2 });
 
 
 /***/ }),
