@@ -15,6 +15,7 @@ import {
 export class EditorPreviewComponent {
   @Input() preview!: Preview;
   @Input() wallpaper!: Wallpaper;
+  @Input() minWidth: number = 420;
 
   getUrl = () => this.wallpaper?.backgroundSelect === null
     ? null

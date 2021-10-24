@@ -9,13 +9,14 @@
         <editor-control label="Container Size"
                         fxFlex>
           <aspect-ratio-editor [data]="wallpaper.containerSize"
+                               [gap]="gap"
                                (refresh)="refresh.emit()"></aspect-ratio-editor>
         </editor-control>
         <editor-control label="Background Image"
                         fxFlex>
           <section fxLayout="row"
                    fxLayoutAlign="start center"
-                   fxLayoutGap="12px">
+                   [fxLayoutGap]="gap">
             <mat-button-toggle-group [(ngModel)]="wallpaper.backgroundSelect"
                                      #imageGroup="matButtonToggleGroup">
               <mat-button-toggle matTooltip="No Image"
@@ -58,7 +59,7 @@
                         fxFlex>
           <section fxLayout="row"
                    fxLayoutAlign="start center"
-                   fxLayoutGap="12px">
+                   [fxLayoutGap]="gap">
             <mat-form-field fxFlex>
               <input matInput
                      [(ngModel)]="wallpaper.containerBorder">
@@ -134,6 +135,7 @@
         <editor-control label="Image Size"
                         fxFlex>
           <aspect-ratio-editor [data]="wallpaper.imageSize"
+                               [gap]="gap"
                                (refresh)="refresh.emit()"></aspect-ratio-editor>
         </editor-control>
         <editor-control label="Alignment"
@@ -152,7 +154,7 @@
                         fxFlex>
           <section fxLayout="row"
                    fxLayoutAlign="start center"
-                   fxLayoutGap="12px">
+                   [fxLayoutGap]="gap">
             <mat-form-field fxFlex>
               <input matInput
                      [(ngModel)]="wallpaper.imageFilter" />
@@ -164,7 +166,7 @@
                         fxFlex>
           <section fxLayout="row"
                    fxLayoutAlign="start center"
-                   fxLayoutGap="12px">
+                   [fxLayoutGap]="gap">
             <mat-form-field fxFlex>
               <input matInput
                      [(ngModel)]="wallpaper.imageBorder">

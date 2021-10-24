@@ -74,6 +74,7 @@ border-style:
 
   @Input() wallpaper!: Wallpaper;
   @Input() editorStyle: string = 'p8';
+  @Input() gap: string = '12px';
 
   @Output() refresh = new EventEmitter();
   @Output() loaded = new EventEmitter<File>();
