@@ -1,7 +1,8 @@
 import {
+  AfterViewInit,
   Component,
   ElementRef,
-  AfterViewInit,
+  OnDestroy,
   ViewChild
 } from '@angular/core';
 

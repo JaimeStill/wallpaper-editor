@@ -42,31 +42,31 @@ export class Preview {
 
         return new AspectRatio(w, h);
       }
-    } else
-      return new AspectRatio(source.width, source.height);
+    } else return source;
   }
 
-  private calculateRatio = (original: number, result: number) => {
-    const difference = original - result;
-    return difference / original;
+  private calculateRatio = (original: number, result: number, scaleDown: boolean = true) => {
+    if (scaleDown) {
+      return original > result
+        ? result / original
+        : original / result;
+    } else {
+      return original > result
+        ? original / result
+        : result / original;
+    }
   }
 
-  private updateContainer = (wp: Wallpaper): { widthRatio: number, heightRatio: number } => {
-    this.containerSize = this.buildRatio(wp.containerSize, this.previewSize, 24);
-    const widthRatio = this.calculateRatio(wp.containerSize.width, this.containerSize.width);
-    const heightRatio = this.calculateRatio(wp.containerSize.height, this.containerSize.height);
+  private updateContainer = (wp: Wallpaper): { wFactor: number, hFactor: number } => {
+    this.containerSize = this.buildRatio(wp.containerSize, this.previewSize, 12);
+    const wFactor = this.calculateRatio(wp.containerSize.width, this.containerSize.width);
+    const hFactor = this.calculateRatio(wp.containerSize.height, this.containerSize.height);
 
-    return { widthRatio, heightRatio };
+    return { wFactor, hFactor };
   }
 
-  private updateImage = (wp: Wallpaper, scale: { widthRatio: number, heightRatio: number }) => {
-    const scaledImage = new AspectRatio(
-      wp.imageSize.scaleWidth(scale.widthRatio),
-      wp.imageSize.scaleHeight(scale.heightRatio)
-    );
-
-    this.imageSize = this.buildRatio(scaledImage, this.containerSize);
-  }
+  private updateImage = (wp: Wallpaper, scale: { wFactor: number, hFactor: number }) =>
+    this.imageSize = wp.imageSize.scale(scale.wFactor, scale.hFactor);
 
   update = (width: number, height: number, wallpaper: Wallpaper | null) => {
     this.previewSize = new AspectRatio(width, height);

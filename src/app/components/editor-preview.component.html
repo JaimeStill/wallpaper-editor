@@ -1,0 +1,22 @@
+<section fxLayout="column"
+         fxLayoutAlign="start stretch"
+         [class]="wallpaper?.containerStyle"
+         [style.height.px]="preview?.containerSize?.height"
+         [style.width.px]="preview?.containerSize?.width"
+         [style.border]="wallpaper?.containerBorder"
+         [style.background-image]="'url(' + wallpaper?.src +')'"
+         [style.background-size]="'cover'">
+  <section fxFlex
+           fxLayout="column"
+           [class]="wallpaper?.containerStyle"
+           [fxLayoutAlign]="wallpaper?.alignment"
+           [style.backdrop-filter]="wallpaper?.containerFilter">
+    <img [src]="wallpaper?.url"
+         [alt]="wallpaper?.name"
+         [class]="wallpaper?.imageStyle"
+         [height]="preview?.imageSize?.height"
+         [width]="preview?.imageSize?.width"
+         [style.border]="wallpaper?.imageBorder"
+         [style.filter]="wallpaper?.imageFilter">
+  </section>
+</section>

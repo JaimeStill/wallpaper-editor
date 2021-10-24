@@ -1,0 +1,8 @@
+<button mat-icon-button
+        [class]="infoStyle"
+        (click)="info.toggle()">
+  <mat-icon #info="matTooltip"
+            matTooltipClass="pre-line large-tooltip"
+            matTooltipPosition="above"
+            [matTooltip]="tip">{{icon}}</mat-icon>
+</button>
