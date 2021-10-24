@@ -1,11 +1,14 @@
 <mat-tab-group animationDuration="0ms"
                class="flexible">
   <mat-tab label="Container">
-    <section fxLayout="column"
-             fxLayoutAlign="start stretch"
+    <section fxLayout.gt-lg="row | wrap"
+             fxLayoutAlign.gt-lg="start center"
+             fxLayout.lt-xl="column"
+             fxLayoutAlign.lt-xl="start stretch"
              [class]="editorStyle">
       <section fxLayout="row | wrap"
-               fxLayoutAlign="start center">
+               fxLayoutAlign="start center"
+               fxFlex.gt-lg>
         <editor-control label="Container Size"
                         fxFlex>
           <aspect-ratio-editor [data]="wallpaper.containerSize"
@@ -43,7 +46,8 @@
         </editor-control>
       </section>
       <section fxLayout="row | wrap"
-               fxLayoutAlign="start center">
+               fxLayoutAlign="start center"
+               fxFlex.gt-lg>
         <editor-control label="Filters"
                         fxFlex>
           <section fxLayout="row"
@@ -69,7 +73,8 @@
         </editor-control>
       </section>
       <section fxLayout="row | wrap"
-               fxLayoutAlign="start center">
+               fxLayoutAlign="start center"
+               fxFlex.gt-lg>
         <editor-control label="Classes"
                         fxFlex>
           <mat-form-field fxFlex>
@@ -86,7 +91,8 @@
         </editor-control>
       </section>
       <section fxLayout="row | wrap"
-               fxLayoutAlign="start center">
+               fxLayoutAlign="start center"
+               fxFlex.gt-lg>
         <editor-control label="Size"
                         fxFlex>
           <mat-form-field fxFlex>
@@ -103,7 +109,8 @@
         </editor-control>
       </section>
       <section fxLayout="row | wrap"
-               fxLayoutAlign="start center">
+               fxLayoutAlign="start center"
+               fxFlex.gt-lg>
         <editor-control label="Clip"
                         fxFlex>
           <mat-form-field fxFlex>
@@ -127,11 +134,14 @@
     </section>
   </mat-tab>
   <mat-tab label="Image">
-    <section fxLayout="column"
-             fxLayoutAlign="start stretch"
+    <section fxLayout.gt-lg="row | wrap"
+             fxLayoutAlign.gt-lg="start center"
+             fxLayout.lt-xl="column"
+             fxLayoutAlign.lt-xl="start stretch"
              [class]="editorStyle">
       <section fxLayout="row | wrap"
-               fxLayoutAlign="start center">
+               fxLayoutAlign="start center"
+               fxFlex.gt-lg>
         <editor-control label="Image Size"
                         fxFlex>
           <aspect-ratio-editor [data]="wallpaper.imageSize"
@@ -149,7 +159,8 @@
         </editor-control>
       </section>
       <section fxLayout="row | wrap"
-               fxLayoutAlign="start center">
+               fxLayoutAlign="start center"
+               fxFlex.gt-lg>
         <editor-control label="Filters"
                         fxFlex>
           <section fxLayout="row"
@@ -176,7 +187,8 @@
         </editor-control>
       </section>
       <section fxLayout="row | wrap"
-               fxLayoutAlign="start center">
+               fxLayoutAlign="start center"
+               fxFlex.gt-lg>
         <editor-control label="Classes"
                         fxFlex>
           <mat-form-field fxFlex>
@@ -213,7 +225,7 @@
           <mat-icon class="material-icons-outlined">file_download</mat-icon>
         </button>
       </section>
-      <image-loader [mini]="true"
+      <image-loader [dropHeight]="180"
                     (loaded)="loaded.emit($event)"></image-loader>
     </section>
   </mat-tab>

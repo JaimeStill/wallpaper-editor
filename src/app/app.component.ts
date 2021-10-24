@@ -52,6 +52,9 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     this.sub?.unsubscribe();
   }
 
+  setLoaderWidth = () => window.innerWidth > 300 ? window.innerWidth - 200 : 100;
+  setLoaderHeight = () => window.innerHeight > 300 ? window.innerHeight - 200 : 100;
+
   resize = () => {
     if (this.previewElement?.nativeElement)
       this.updatePreview(this.previewElement.nativeElement);
