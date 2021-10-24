@@ -139,8 +139,7 @@ class AppComponent {
                 img.src = URL.createObjectURL(file);
                 img.onload = () => {
                     var _a;
-                    this.imageSrc = this.sanitizer.bypassSecurityTrustUrl(img.src);
-                    this.wallpaper = new _models__WEBPACK_IMPORTED_MODULE_0__.Wallpaper(img.src, this.imageSrc, file, img.width, img.height, (_a = file.name) === null || _a === void 0 ? void 0 : _a.split('.')[0], 3440, 1440);
+                    this.wallpaper = new _models__WEBPACK_IMPORTED_MODULE_0__.Wallpaper(img.src, this.sanitizer.bypassSecurityTrustUrl(img.src), file, img.width, img.height, (_a = file.name) === null || _a === void 0 ? void 0 : _a.split('.')[0], window.screen.availWidth, window.screen.availHeight);
                     this.updatePreview(this.previewElement.nativeElement);
                     this.loading = false;
                 };
@@ -177,7 +176,7 @@ AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["�
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("loading", ctx.loading);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.imageSrc && ctx.wallpaper);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.wallpaper);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !ctx.wallpaper);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
@@ -410,13 +409,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "EditorPreviewComponent": () => (/* binding */ EditorPreviewComponent)
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2316);
-/* harmony import */ var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/flex-layout/flex */ 582);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ 1570);
+/* harmony import */ var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/flex-layout/flex */ 582);
+
 
 
 class EditorPreviewComponent {
+    constructor(sanitizer) {
+        this.sanitizer = sanitizer;
+    }
+    get backdropStyle() {
+        var _a;
+        return this.sanitizer.bypassSecurityTrustStyle(`
+      backdrop-filter: ${(_a = this.wallpaper) === null || _a === void 0 ? void 0 : _a.containerFilter};
+      -webkit-backdrop-filter: ${this.wallpaper.containerFilter};
+    `);
+    }
 }
-EditorPreviewComponent.ɵfac = function EditorPreviewComponent_Factory(t) { return new (t || EditorPreviewComponent)(); };
-EditorPreviewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: EditorPreviewComponent, selectors: [["editor-preview"]], inputs: { preview: "preview", wallpaper: "wallpaper" }, decls: 3, vars: 27, consts: [["fxLayout", "column", "fxLayoutAlign", "start stretch"], ["fxFlex", "", "fxLayout", "column", 3, "fxLayoutAlign"], [3, "src", "alt", "height", "width"]], template: function EditorPreviewComponent_Template(rf, ctx) { if (rf & 1) {
+EditorPreviewComponent.ɵfac = function EditorPreviewComponent_Factory(t) { return new (t || EditorPreviewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__.DomSanitizer)); };
+EditorPreviewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: EditorPreviewComponent, selectors: [["editor-preview"]], inputs: { preview: "preview", wallpaper: "wallpaper" }, decls: 3, vars: 29, consts: [["fxLayout", "column", "fxLayoutAlign", "start stretch"], ["fxFlex", "", "fxLayout", "column", 3, "fxLayoutAlign"], [3, "src", "alt", "height", "width"]], template: function EditorPreviewComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "section", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 2);
@@ -427,13 +438,13 @@ EditorPreviewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MOD
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("height", ctx.preview == null ? null : ctx.preview.containerSize == null ? null : ctx.preview.containerSize.height, "px")("width", ctx.preview == null ? null : ctx.preview.containerSize == null ? null : ctx.preview.containerSize.width, "px")("border", ctx.wallpaper == null ? null : ctx.wallpaper.containerBorder)("background-image", "url(" + (ctx.wallpaper == null ? null : ctx.wallpaper.src) + ")")("background-size", "cover");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.wallpaper == null ? null : ctx.wallpaper.containerStyle);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("backdrop-filter", ctx.wallpaper == null ? null : ctx.wallpaper.containerFilter);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("backdrop-filter", ctx.wallpaper == null ? null : ctx.wallpaper.containerFilter)("-webkit-backdrop-filter", ctx.wallpaper == null ? null : ctx.wallpaper.containerFilter);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("fxLayoutAlign", ctx.wallpaper == null ? null : ctx.wallpaper.alignment);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.wallpaper == null ? null : ctx.wallpaper.imageStyle);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("border", ctx.wallpaper == null ? null : ctx.wallpaper.imageBorder)("filter", ctx.wallpaper == null ? null : ctx.wallpaper.imageFilter);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx.wallpaper == null ? null : ctx.wallpaper.url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"])("alt", ctx.wallpaper == null ? null : ctx.wallpaper.name)("height", ctx.preview == null ? null : ctx.preview.imageSize == null ? null : ctx.preview.imageSize.height)("width", ctx.preview == null ? null : ctx.preview.imageSize == null ? null : ctx.preview.imageSize.width);
-    } }, directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_1__.DefaultLayoutDirective, _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_1__.DefaultLayoutAlignDirective, _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_1__.DefaultFlexDirective], encapsulation: 2 });
+    } }, directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_2__.DefaultLayoutDirective, _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_2__.DefaultLayoutAlignDirective, _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_2__.DefaultFlexDirective], encapsulation: 2 });
 
 
 /***/ }),
