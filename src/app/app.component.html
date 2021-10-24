@@ -17,7 +17,8 @@
                       [wallpaper]="wallpaper"></editor-preview>
     </ng-container>
     <image-loader *ngIf="!(wallpaper)"
-                  [dropWidth]="400"
+                  [dropWidth]="setLoaderWidth()"
+                  [dropHeight]="setLoaderHeight()"
                   (loaded)="load($event)"></image-loader>
   </section>
   <section *ngIf="wallpaper"
