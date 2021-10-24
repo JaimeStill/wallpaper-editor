@@ -11,7 +11,7 @@
            fxLayoutAlign="center center"
            class="p8 background-card"
            (window:resize)="resize()">
-    <ng-container *ngIf="imageSrc && wallpaper">
+    <ng-container *ngIf="wallpaper">
       <editor-preview [preview]="preview" [wallpaper]="wallpaper"></editor-preview>
     </ng-container>
     <image-loader *ngIf="!(wallpaper)"

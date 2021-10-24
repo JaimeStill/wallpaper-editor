@@ -25,7 +25,6 @@ import { ThemeService } from './services';
 export class AppComponent implements AfterViewInit {
   loading: boolean = false;
   wallpaper!: Wallpaper;
-  imageSrc!: SafeUrl;
   preview!: Preview;
 
   @ViewChild('previewElement') previewElement!: ElementRef<HTMLElement>;
@@ -55,8 +54,17 @@ export class AppComponent implements AfterViewInit {
       img.src = URL.createObjectURL(file);
 
       img.onload = () => {
-        this.imageSrc = this.sanitizer.bypassSecurityTrustUrl(img.src);
-        this.wallpaper = new Wallpaper(img.src, this.imageSrc, file, img.width, img.height, file.name?.split('.')[0], 3440, 1440);
+        this.wallpaper = new Wallpaper(
+          img.src,
+          this.sanitizer.bypassSecurityTrustUrl(img.src),
+          file,
+          img.width,
+          img.height,
+          file.name?.split('.')[0],
+          window.screen.availWidth,
+          window.screen.availHeight
+        );
+
         this.updatePreview(this.previewElement.nativeElement);
         this.loading = false;
       }

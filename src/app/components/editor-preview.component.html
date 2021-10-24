@@ -10,7 +10,8 @@
            fxLayout="column"
            [class]="wallpaper?.containerStyle"
            [fxLayoutAlign]="wallpaper?.alignment"
-           [style.backdrop-filter]="wallpaper?.containerFilter">
+           [style.backdrop-filter]="wallpaper?.containerFilter"
+           [style.-webkit-backdrop-filter]="wallpaper?.containerFilter">
     <img [src]="wallpaper?.url"
          [alt]="wallpaper?.name"
          [class]="wallpaper?.imageStyle"
