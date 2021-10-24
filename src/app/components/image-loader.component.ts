@@ -31,7 +31,7 @@ export class ImageLoaderComponent implements OnInit {
 
   ngOnInit() {
     this.dropHeight = this.mini
-      ? 120
+      ? 180
       : this.dropHeight;
   }
 

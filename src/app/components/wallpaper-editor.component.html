@@ -1,81 +1,218 @@
-<section fxLayout="column"
-         fxLayoutAlign="start stretch"
-         [class]="editorStyle">
-  <section fxLayout="row | wrap"
-           fxLayoutAlign="start center">
+<mat-tab-group animationDuration="0ms"
+               class="flexible">
+  <mat-tab label="Container">
     <section fxLayout="column"
              fxLayoutAlign="start stretch"
-             fxFlex
-             class="p8 m4 background-card rounded">
-      <p class="mat-subheading-1">Container Size</p>
-      <aspect-ratio-editor [data]="wallpaper.containerSize"
-                           (refresh)="refresh.emit()"></aspect-ratio-editor>
+             [class]="editorStyle">
+      <section fxLayout="row | wrap"
+               fxLayoutAlign="start center">
+        <editor-control label="Container Size"
+                        fxFlex>
+          <aspect-ratio-editor [data]="wallpaper.containerSize"
+                               (refresh)="refresh.emit()"></aspect-ratio-editor>
+        </editor-control>
+        <editor-control label="Background Image"
+                        fxFlex>
+          <section fxLayout="row"
+                   fxLayoutAlign="start center"
+                   fxLayoutGap="12px">
+            <mat-button-toggle-group [(ngModel)]="wallpaper.backgroundSelect"
+                                     #imageGroup="matButtonToggleGroup">
+              <mat-button-toggle matTooltip="No Image"
+                                 [value]="null">
+                <mat-icon class="material-icons-outlined">image_not_supported</mat-icon>
+              </mat-button-toggle>
+              <mat-button-toggle matTooltip="Default Image"
+                                 [value]="false">
+                <mat-icon class="material-icons-outlined">image</mat-icon>
+              </mat-button-toggle>
+              <mat-button-toggle matTooltip="Custom Image"
+                                 [value]="true">
+                <mat-icon class="material-icons-outlined">image_search</mat-icon>
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+            <mat-form-field fxFlex>
+              <mat-label>URL</mat-label>
+              <input matInput
+                     [disabled]="!(wallpaper.backgroundSelect)"
+                     (input)="setBackgroundImage()"
+                     [(ngModel)]="wallpaper.containerImage">
+            </mat-form-field>
+          </section>
+        </editor-control>
+      </section>
+      <section fxLayout="row | wrap"
+               fxLayoutAlign="start center">
+        <editor-control label="Filters"
+                        fxFlex>
+          <section fxLayout="row"
+                   fxLayoutAlign="start center">
+            <mat-form-field fxFlex>
+              <input matInput
+                     [(ngModel)]="wallpaper.containerFilter" />
+            </mat-form-field>
+            <info [tip]="backdropTip"></info>
+          </section>
+        </editor-control>
+        <editor-control label="Border"
+                        fxFlex>
+          <section fxLayout="row"
+                   fxLayoutAlign="start center"
+                   fxLayoutGap="12px">
+            <mat-form-field fxFlex>
+              <input matInput
+                     [(ngModel)]="wallpaper.containerBorder">
+            </mat-form-field>
+            <info [tip]="borderTip"></info>
+          </section>
+        </editor-control>
+      </section>
+      <section fxLayout="row | wrap"
+               fxLayoutAlign="start center">
+        <editor-control label="Classes"
+                        fxFlex>
+          <mat-form-field fxFlex>
+            <input matInput
+                   [(ngModel)]="wallpaper.containerStyle">
+          </mat-form-field>
+        </editor-control>
+        <editor-control label="Color"
+                        fxFlex>
+          <mat-form-field fxFlex>
+            <input matInput
+                   [(ngModel)]="wallpaper.containerColor">
+          </mat-form-field>
+        </editor-control>
+      </section>
+      <section fxLayout="row | wrap"
+               fxLayoutAlign="start center">
+        <editor-control label="Size"
+                        fxFlex>
+          <mat-form-field fxFlex>
+            <input matInput
+                   [(ngModel)]="wallpaper.containerBgSize">
+          </mat-form-field>
+        </editor-control>
+        <editor-control label="Position"
+                        fxFlex>
+          <mat-form-field fxFlex>
+            <input matInput
+                   [(ngModel)]="wallpaper.containerPosition">
+          </mat-form-field>
+        </editor-control>
+      </section>
+      <section fxLayout="row | wrap"
+               fxLayoutAlign="start center">
+        <editor-control label="Clip"
+                        fxFlex>
+          <mat-form-field fxFlex>
+            <mat-select [(ngModel)]="wallpaper.containerClip">
+              <mat-option>none</mat-option>
+              <mat-option value="border-box">border-box</mat-option>
+              <mat-option value="padding-box">padding-box</mat-option>
+              <mat-option value="content-box">content-box</mat-option>
+              <mat-option value="text">text</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </editor-control>
+        <editor-control label="Repeat"
+                        fxFlex>
+          <mat-form-field fxFlex>
+            <input matInput
+                   [(ngModel)]="wallpaper.containerRepeat">
+          </mat-form-field>
+        </editor-control>
+      </section>
     </section>
+  </mat-tab>
+  <mat-tab label="Image">
     <section fxLayout="column"
              fxLayoutAlign="start stretch"
-             fxFlex
-             class="p8 m4 background-card rounded">
-      <p class="mat-subheading-1">Image Size</p>
-      <aspect-ratio-editor [data]="wallpaper.imageSize"
-                           (refresh)="refresh.emit()"></aspect-ratio-editor>
+             [class]="editorStyle">
+      <section fxLayout="row | wrap"
+               fxLayoutAlign="start center">
+        <editor-control label="Image Size"
+                        fxFlex>
+          <aspect-ratio-editor [data]="wallpaper.imageSize"
+                               (refresh)="refresh.emit()"></aspect-ratio-editor>
+        </editor-control>
+        <editor-control label="Alignment"
+                        fxFlex>
+          <mat-form-field>
+            <mat-select [(ngModel)]="wallpaper.alignment">
+              <mat-option *ngFor="let a of alignments"
+                          [value]="a">{{a}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </editor-control>
+      </section>
+      <section fxLayout="row | wrap"
+               fxLayoutAlign="start center">
+        <editor-control label="Filters"
+                        fxFlex>
+          <section fxLayout="row"
+                   fxLayoutAlign="start center"
+                   fxLayoutGap="12px">
+            <mat-form-field fxFlex>
+              <input matInput
+                     [(ngModel)]="wallpaper.imageFilter" />
+            </mat-form-field>
+            <info [tip]="filterTip"></info>
+          </section>
+        </editor-control>
+        <editor-control label="Border"
+                        fxFlex>
+          <section fxLayout="row"
+                   fxLayoutAlign="start center"
+                   fxLayoutGap="12px">
+            <mat-form-field fxFlex>
+              <input matInput
+                     [(ngModel)]="wallpaper.imageBorder">
+            </mat-form-field>
+            <info [tip]="borderTip"></info>
+          </section>
+        </editor-control>
+      </section>
+      <section fxLayout="row | wrap"
+               fxLayoutAlign="start center">
+        <editor-control label="Classes"
+                        fxFlex>
+          <mat-form-field fxFlex>
+            <input matInput
+                   [(ngModel)]="wallpaper.imageStyle">
+          </mat-form-field>
+        </editor-control>
+        <editor-control label="Transform"
+                        fxFlex>
+          <mat-form-field fxFlex>
+            <input matInput
+                   [(ngModel)]="wallpaper.imageTransform">
+          </mat-form-field>
+        </editor-control>
+      </section>
     </section>
-  </section>
-  <section fxLayout="column"
-           fxLayoutAlign="start stretch"
-           class="p8 m4 background-card rounded">
-    <p class="mat-subheading-1">Settings</p>
-    <section fxLayout="row | wrap"
-             fxLayoutAlign="start center"
-             fxLayoutGap="12px">
-      <mat-form-field fxFlex>
-        <mat-label>Container Filters</mat-label>
-        <input matInput
-               [(ngModel)]="wallpaper.containerFilter" />
-      </mat-form-field>
-      <info [tip]="backdropTip"></info>
-      <mat-form-field fxFlex>
-        <mat-label>Image Filters</mat-label>
-        <input matInput
-               [(ngModel)]="wallpaper.imageFilter" />
-      </mat-form-field>
-      <info [tip]="filterTip"></info>
+  </mat-tab>
+  <mat-tab label="File">
+    <section fxLayout="column"
+             fxLayoutAlign="start stretch"
+             [class]="editorStyle">
+      <section fxLayout="row"
+               fxLayoutAlign="start center"
+               fxLayoutGap="4px"
+               class="m4">
+        <mat-form-field fxFlex>
+          <mat-label>Name</mat-label>
+          <input matInput
+                 [(ngModel)]="wallpaper.name" />
+        </mat-form-field>
+        <button mat-icon-button
+                color="primary"
+                matTooltip="Export Wallpaper">
+          <mat-icon class="material-icons-outlined">file_download</mat-icon>
+        </button>
+      </section>
+      <image-loader [mini]="true"
+                    (loaded)="loaded.emit($event)"></image-loader>
     </section>
-    <section fxLayout="row | wrap"
-             fxLayoutAlign="start center"
-             fxLayoutGap="12px">
-      <mat-form-field fxFlex>
-        <mat-label>Container Border</mat-label>
-        <input matInput
-               [(ngModel)]="wallpaper.containerBorder">
-      </mat-form-field>
-      <info [tip]="borderTip"></info>
-      <mat-form-field fxFlex>
-        <mat-label>Image Border</mat-label>
-        <input matInput
-               [(ngModel)]="wallpaper.imageBorder">
-      </mat-form-field>
-      <info [tip]="borderTip"></info>
-    </section>
-    <section fxLayout="row | wrap"
-             fxLayoutAlign="start center"
-             fxLayoutGap="12px">
-      <mat-form-field fxFlex>
-        <mat-label>Container Style</mat-label>
-        <input matInput
-               [(ngModel)]="wallpaper.containerStyle">
-      </mat-form-field>
-      <mat-form-field fxFlex>
-        <mat-label>Image Style</mat-label>
-        <input matInput
-               [(ngModel)]="wallpaper.imageStyle">
-      </mat-form-field>
-    </section>
-    <mat-form-field>
-      <mat-label>Alignment</mat-label>
-      <mat-select [(ngModel)]="wallpaper.alignment">
-        <mat-option *ngFor="let a of alignments"
-                    [value]="a">{{a}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </section>
-</section>
+  </mat-tab>
+</mat-tab-group>

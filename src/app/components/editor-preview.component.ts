@@ -15,4 +15,10 @@ import {
 export class EditorPreviewComponent {
   @Input() preview!: Preview;
   @Input() wallpaper!: Wallpaper;
+
+  getUrl = () => this.wallpaper?.backgroundSelect === null
+    ? null
+    : this.wallpaper?.backgroundSelect === false
+      ? `url(${this.wallpaper?.src})`
+      : `url(${this.wallpaper?.containerImage})`;
 }

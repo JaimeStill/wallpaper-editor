@@ -10,8 +10,16 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.control-panel {
+.preview-panel-sm {
+  max-height: calc(40% - 48px);
+}
+
+.preview-panel-lg {
   max-height: 60%;
+}
+
+.control-panel {
+  max-height: 60%
 }
 
 
@@ -79,13 +87,15 @@ mat-tab-group.mat-tab-group.flexible div.mat-tab-labels {
   }
 }
 
-nav.mat-tab-nav-bar.flexible div.mat-tab-links {
+nav.mat-tab-nav-bar.flexible div.mat-tab-links,
+mat-tab-group.mat-tab-group.flexible div.mat-tab-labels {
   display: flex;
   flex-direction: row;
   align-items: stretch;
   justify-items: space-evenly;
 
-  a.mat-tab-link {
+  a.mat-tab-link,
+  div.mat-tab-label {
     flex-grow: 1;
     flex-basis: auto;
     min-width: 0;

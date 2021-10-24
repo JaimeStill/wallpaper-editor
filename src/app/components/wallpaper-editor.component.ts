@@ -5,6 +5,7 @@ import {
   Output
 } from '@angular/core';
 
+import { DomSanitizer } from '@angular/platform-browser';
 import { Wallpaper } from '../models';
 
 @Component({
@@ -75,4 +76,14 @@ border-style:
   @Input() editorStyle: string = 'p8';
 
   @Output() refresh = new EventEmitter();
+  @Output() loaded = new EventEmitter<File>();
+
+  constructor(
+    private sanitizer: DomSanitizer
+  ) { }
+
+  setBackgroundImage = () =>
+    this.wallpaper.containerUrl = this.wallpaper.containerImage
+      ? this.sanitizer.bypassSecurityTrustUrl(this.wallpaper.containerImage)
+      : null;
 }
