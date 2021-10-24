@@ -1,7 +1,8 @@
 <section fxLayout="column"
          fxLayoutAlign="start stretch"
+         class="p8"
          [class]="controlStyle"
-         [style.min-width.px]="minWidth">
+         [style.min-width.px]="controlWidth">
   <p [class]="labelStyle">{{label}}</p>
   <ng-content></ng-content>
 </section>

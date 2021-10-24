@@ -7,22 +7,25 @@ import {
 } from '@angular/core';
 
 import {
-  DomSanitizer,
-  SafeUrl
-} from '@angular/platform-browser';
-
-import {
   Preview,
   Wallpaper
 } from './models';
 
-import { ThemeService } from './services';
+import {
+  ResizeService,
+  ThemeService
+} from './services';
+
+import { DomSanitizer } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnDestroy {
+  private sub!: Subscription;
+
   loading: boolean = false;
   wallpaper!: Wallpaper;
   preview!: Preview;
@@ -33,13 +36,20 @@ export class AppComponent implements AfterViewInit {
     this.preview = new Preview(el.offsetWidth, el.offsetHeight, this.wallpaper)
 
   constructor(
+    private resizeSvc: ResizeService,
     private sanitizer: DomSanitizer,
     public themer: ThemeService
   ) { }
 
   ngAfterViewInit() {
+    this.sub = this.resizeSvc.init();
+
     if (this.previewElement?.nativeElement)
       this.updatePreview(this.previewElement.nativeElement);
+  }
+
+  ngOnDestroy() {
+    this.sub?.unsubscribe();
   }
 
   resize = () => {
