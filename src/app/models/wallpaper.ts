@@ -16,12 +16,12 @@ export class Wallpaper {
   containerBorder: string = '';
   containerClip: string = '';
   containerColor: string = '';
-  containerFilter: string = '';
+  containerFilter: string = 'brightness(1.8)';
   containerImage: string = '';
   containerPosition: string = '';
   containerRepeat: string = '';
-  containerBgSize: string = '';
-  containerStyle: string = 'background-default';
+  containerBgSize: string = 'cover';
+  containerStyle: string = '';
   containerUrl!: SafeUrl | null;
 
   imageFilter: string = '';
