@@ -8,6 +8,8 @@ import {
   Wallpaper
 } from '../models';
 
+import { DomSanitizer } from '@angular/platform-browser';
+
 @Component({
   selector: 'editor-preview',
   templateUrl: 'editor-preview.component.html'
@@ -15,4 +17,15 @@ import {
 export class EditorPreviewComponent {
   @Input() preview!: Preview;
   @Input() wallpaper!: Wallpaper;
+
+  constructor(
+    private sanitizer: DomSanitizer
+  ) { }
+
+  get backdropStyle() {
+    return this.sanitizer.bypassSecurityTrustStyle(`
+      backdrop-filter: ${this.wallpaper?.containerFilter};
+      -webkit-backdrop-filter: ${this.wallpaper.containerFilter};
+    `)
+  }
 }
