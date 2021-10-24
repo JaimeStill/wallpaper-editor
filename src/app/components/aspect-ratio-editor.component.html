@@ -3,10 +3,12 @@
          [fxLayoutGap]="gap">
   <mat-button-toggle-group [value]="ar.locked"
                            (change)="updateLock($event.value)">
-    <mat-button-toggle [value]="true">
+    <mat-button-toggle matTooltip="Lock Aspect Ratio"
+                       [value]="true">
       <mat-icon [class]="lockStyle">{{lockIcon}}</mat-icon>
     </mat-button-toggle>
-    <mat-button-toggle [value]="false">
+    <mat-button-toggle matTooltip="Unlock Aspect Ratio"
+                       [value]="false">
       <mat-icon [class]="unlockStyle">{{unlockIcon}}</mat-icon>
     </mat-button-toggle>
   </mat-button-toggle-group>

@@ -4,8 +4,12 @@
          [style.height.px]="preview?.containerSize?.height"
          [style.width.px]="preview?.containerSize?.width"
          [style.border]="wallpaper?.containerBorder"
-         [style.background-image]="'url(' + wallpaper?.src +')'"
-         [style.background-size]="'cover'">
+         [style.background-clip]="wallpaper?.containerClip"
+         [style.background-color]="wallpaper?.containerColor"
+         [style.background-image]="getUrl()"
+         [style.background-position]="wallpaper?.containerPosition"
+         [style.background-repeat]="wallpaper?.containerRepeat"
+         [style.background-size]="wallpaper?.containerSize">
   <section fxFlex
            fxLayout="column"
            [class]="wallpaper?.containerStyle"
@@ -18,6 +22,7 @@
          [height]="preview?.imageSize?.height"
          [width]="preview?.imageSize?.width"
          [style.border]="wallpaper?.imageBorder"
-         [style.filter]="wallpaper?.imageFilter">
+         [style.filter]="wallpaper?.imageFilter"
+         [style.transform]="wallpaper?.imageTransform">
   </section>
 </section>

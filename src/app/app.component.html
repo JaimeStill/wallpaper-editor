@@ -6,13 +6,15 @@
               containerStyle="p8 background-card"
               [loading]="loading"></app-header>
   <section #previewElement
-           fxFlex
+           [fxFlex.gt-sm]="wallpaper ? '60%' : '100%'"
+           [fxFlex.lt-md]="wallpaper ? '40%' : '100%'"
            fxLayout="column"
            fxLayoutAlign="center center"
            class="p8 background-card"
            (window:resize)="resize()">
     <ng-container *ngIf="wallpaper">
-      <editor-preview [preview]="preview" [wallpaper]="wallpaper"></editor-preview>
+      <editor-preview [preview]="preview"
+                      [wallpaper]="wallpaper"></editor-preview>
     </ng-container>
     <image-loader *ngIf="!(wallpaper)"
                   [dropWidth]="400"
@@ -22,29 +24,12 @@
            fxLayout.lt-md="column"
            fxLayout.gt-sm="row | wrap"
            fxLayoutAlign="start stretch"
-           class="p8 background-default el-8 scroll-container control-panel">
-    <section fxLayout="column"
-             fxLayoutAlign="start stretch">
-      <section fxLayout="row"
-               fxLayoutAlign="start center"
-               fxLayoutGap="4px"
-               class="m4">
-        <mat-form-field fxFlex>
-          <mat-label>Name</mat-label>
-          <input matInput
-                 [(ngModel)]="wallpaper.name" />
-        </mat-form-field>
-        <button mat-icon-button
-                color="primary"
-                matTooltip="Export Wallpaper">
-          <mat-icon class="material-icons-outlined">file_download</mat-icon>
-        </button>
-      </section>
-      <image-loader [mini]="true"
-                    (loaded)="load($event)"></image-loader>
-    </section>
+           fxFlex.gt-sm="40%"
+           fxFlex.lt-md="60%"
+           class="p8 background-default scroll-container">
     <wallpaper-editor fxFlex
                       [wallpaper]="wallpaper"
+                      (loaded)="load($event)"
                       (refresh)="refresh()"></wallpaper-editor>
   </section>
 </section>

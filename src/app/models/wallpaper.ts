@@ -11,13 +11,23 @@ export class Wallpaper {
   name: string;
   alignment: string = 'center center';
 
-  containerFilter: string = '';
+  backgroundSelect: boolean | null = true;
+
   containerBorder: string = '';
-  containerStyle: string = '';
+  containerClip: string = '';
+  containerColor: string = '';
+  containerFilter: string = '';
+  containerImage: string = '';
+  containerPosition: string = '';
+  containerRepeat: string = '';
+  containerBgSize: string = '';
+  containerStyle: string = 'background-default';
+  containerUrl!: SafeUrl | null;
 
   imageFilter: string = '';
   imageBorder: string = '';
   imageStyle: string = '';
+  imageTransform: string = '';
 
   public get containerSize() { return this._containerSize; }
   public get imageSize() { return this._imageSize; }
