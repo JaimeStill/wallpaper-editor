@@ -9,10 +9,15 @@ export class Wallpaper {
   url: SafeUrl;
   file: File;
   name: string;
-  backdropFilter: string = '';
-  filter: string = '';
-  border: string = '';
   alignment: string = 'center center';
+
+  containerFilter: string = '';
+  containerBorder: string = '';
+  containerStyle: string = '';
+
+  imageFilter: string = '';
+  imageBorder: string = '';
+  imageStyle: string = '';
 
   public get containerSize() { return this._containerSize; }
   public get imageSize() { return this._imageSize; }

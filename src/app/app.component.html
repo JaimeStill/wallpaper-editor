@@ -9,25 +9,10 @@
            fxFlex
            fxLayout="column"
            fxLayoutAlign="center center"
-           class="p8 scroll-container background-card"
+           class="p8 background-card"
            (window:resize)="resize()">
     <ng-container *ngIf="imageSrc && wallpaper">
-      <section class="card-outline-accent"
-               fxLayout="column"
-               [fxLayoutAlign]="wallpaper.alignment"
-               [style.width.px]="preview.containerSize.width"
-               [style.height.px]="preview.containerSize.height">
-        <img [height]="preview.imageSize.height"
-             [width]="preview.imageSize.width"
-             [src]="imageSrc"
-             [alt]="wallpaper.name">
-      </section>
-      <section fxLayout="column"
-               fxLayoutAlign="start stretch"
-               class="monospace p8">
-        <p class="m4">{{wallpaper.render()}}</p>
-        <p class="m4">{{preview.render()}}</p>
-      </section>
+      <editor-preview [preview]="preview" [wallpaper]="wallpaper"></editor-preview>
     </ng-container>
     <image-loader *ngIf="!(wallpaper)"
                   [dropWidth]="400"

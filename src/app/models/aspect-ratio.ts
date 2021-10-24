@@ -26,8 +26,11 @@ export class AspectRatio {
   getAspectHeight = (newWidth: number) => this.ensureGreaterThanZero(Math.floor(newWidth * (this.height / this.width)));
   getAspectWidth = (newHeight: number) => this.ensureGreaterThanZero(Math.floor(newHeight * (this.width / this.height)));
 
-  scaleHeight = (factor: number) => this.ensureGreaterThanZero(Math.floor(this.height * factor));
-  scaleWidth = (factor: number) => this.ensureGreaterThanZero(Math.floor(this.width * factor));
+  scale = (wFactor: number, hFactor: number): AspectRatio =>
+    new AspectRatio(
+      this.ensureGreaterThanZero(Math.floor(this.width * wFactor)),
+      this.ensureGreaterThanZero(Math.floor(this.height * hFactor))
+    );
 
   setHeight = (height: number, lock: boolean = this.locked) => {
     const width = this.getAspectWidth(height);
