@@ -448,7 +448,7 @@ EditorPreviewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MOD
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.wallpaper == null ? null : ctx.wallpaper.containerStyle);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("height", ctx.preview == null ? null : ctx.preview.containerSize == null ? null : ctx.preview.containerSize.height, "px")("width", ctx.preview == null ? null : ctx.preview.containerSize == null ? null : ctx.preview.containerSize.width, "px")("border", ctx.wallpaper == null ? null : ctx.wallpaper.containerBorder)("background-clip", ctx.wallpaper == null ? null : ctx.wallpaper.containerClip)("background-color", ctx.wallpaper == null ? null : ctx.wallpaper.containerColor)("background-image", ctx.getUrl())("background-position", ctx.wallpaper == null ? null : ctx.wallpaper.containerPosition)("background-repeat", ctx.wallpaper == null ? null : ctx.wallpaper.containerRepeat)("background-size", ctx.wallpaper == null ? null : ctx.wallpaper.containerSize);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("height", ctx.preview == null ? null : ctx.preview.containerSize == null ? null : ctx.preview.containerSize.height, "px")("width", ctx.preview == null ? null : ctx.preview.containerSize == null ? null : ctx.preview.containerSize.width, "px")("border", ctx.wallpaper == null ? null : ctx.wallpaper.containerBorder)("background-clip", ctx.wallpaper == null ? null : ctx.wallpaper.containerClip)("background-color", ctx.wallpaper == null ? null : ctx.wallpaper.containerColor)("background-image", ctx.getUrl())("background-position", ctx.wallpaper == null ? null : ctx.wallpaper.containerPosition)("background-repeat", ctx.wallpaper == null ? null : ctx.wallpaper.containerRepeat)("background-size", ctx.wallpaper == null ? null : ctx.wallpaper.containerBgSize);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.wallpaper == null ? null : ctx.wallpaper.containerStyle);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("backdrop-filter", ctx.wallpaper == null ? null : ctx.wallpaper.containerFilter)("-webkit-backdrop-filter", ctx.wallpaper == null ? null : ctx.wallpaper.containerFilter);
@@ -1729,12 +1729,12 @@ class Wallpaper {
         this.containerBorder = '';
         this.containerClip = '';
         this.containerColor = '';
-        this.containerFilter = '';
+        this.containerFilter = 'brightness(1.8)';
         this.containerImage = '';
         this.containerPosition = '';
         this.containerRepeat = '';
-        this.containerBgSize = '';
-        this.containerStyle = 'background-default';
+        this.containerBgSize = 'cover';
+        this.containerStyle = '';
         this.imageFilter = '';
         this.imageBorder = '';
         this.imageStyle = '';
