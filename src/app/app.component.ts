@@ -18,6 +18,7 @@ import {
 
 import { DomSanitizer } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
+import { toPng } from 'html-to-image';
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   preview!: Preview;
 
   @ViewChild('previewElement') previewElement!: ElementRef<HTMLElement>;
+  @ViewChild('target') target!: ElementRef<HTMLElement>;
 
   private updatePreview = (el: HTMLElement) =>
     this.preview = new Preview(el.offsetWidth, el.offsetHeight, this.wallpaper)
@@ -52,9 +54,17 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     this.sub?.unsubscribe();
   }
 
-  setLoaderWidth = () => window.innerWidth > 300 ? window.innerWidth - 200 : 100;
-  setLoaderHeight = () => window.innerHeight > 300 ? window.innerHeight - 200 : 100;
+  getLoaderSize = () => {
+    const width = window.innerWidth > 300
+      ? window.innerWidth - 200
+      : 200;
 
+    const height = window.innerHeight > 300
+      ? window.innerHeight - 200
+      : 200;
+
+    return Math.min(width, height);
+  }
   resize = () => {
     if (this.previewElement?.nativeElement)
       this.updatePreview(this.previewElement.nativeElement);
@@ -86,5 +96,33 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
   refresh = () => {
     this.updatePreview(this.previewElement.nativeElement);
+  }
+
+  download = async () => {
+    const target = document.getElementById('target') as HTMLElement;
+    const targetSize = { width: target.style.width, height: target.style.height }
+    const effects = target?.children[0] as HTMLElement;
+    const img = target?.children[0]?.children[0] as HTMLImageElement;
+    const imgSize = { width: img.style.width, height: img.style.height }
+
+    if (target && effects && img) {
+      target.style.width = effects.style.width = `${this.wallpaper.containerSize.width}px`;
+      target.style.height = effects.style.height = `${this.wallpaper.containerSize.height}px`;
+      img.src = this.wallpaper.src;
+      img.style.width = `${this.wallpaper.imageSize.width}px`;
+      img.style.height = `${this.wallpaper.imageSize.height}px`;
+
+      const result = await toPng(target);
+
+      target.style.width = effects.style.width = targetSize.width;
+      target.style.height = effects.style.height = targetSize.height;
+      img.style.width = imgSize.width;
+      img.style.height = imgSize.height;
+
+      const link = document.createElement('a');
+      link.download = `${this.wallpaper.name}.png`;
+      link.href = result;
+      link.click();
+    }
   }
 }

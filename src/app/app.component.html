@@ -17,8 +17,8 @@
                       [wallpaper]="wallpaper"></editor-preview>
     </ng-container>
     <image-loader *ngIf="!(wallpaper)"
-                  [dropWidth]="setLoaderWidth()"
-                  [dropHeight]="setLoaderHeight()"
+                  [dropWidth]="getLoaderSize()"
+                  [dropHeight]="getLoaderSize()"
                   (loaded)="load($event)"></image-loader>
   </section>
   <section *ngIf="wallpaper"
@@ -31,6 +31,7 @@
     <wallpaper-editor fxFlex
                       [wallpaper]="wallpaper"
                       (loaded)="load($event)"
-                      (refresh)="refresh()"></wallpaper-editor>
+                      (refresh)="refresh()"
+                      (download)="download()"></wallpaper-editor>
   </section>
 </section>

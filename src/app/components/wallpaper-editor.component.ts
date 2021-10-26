@@ -76,6 +76,7 @@ border-style:
   @Input() editorStyle: string = 'p8';
   @Input() gap: string = '12px';
 
+  @Output() download = new EventEmitter();
   @Output() refresh = new EventEmitter();
   @Output() loaded = new EventEmitter<File>();
 
